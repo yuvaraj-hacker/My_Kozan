@@ -52,17 +52,17 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <a href='http://arrowthought.com/' target='_blank'>
-        <div className='bg-[#FFF69F] text-center  py-4 font-semibold md:mb-0 gap-1 mb-16 flex flex-wrap justify-center md:px-0 px-5'>
-          <div className='flex gap-1'>
-            ©2024 by MyKozan LLC <span className='md:block hidden'> | </span>
-          </div>
-          <div>
-            Developed by <span className='text-[#C50707]'>  Arrow Thought</span>
-          </div>
 
+      <div className='bg-[#FFF69F] text-center  py-4 font-semibold md:mb-0  gap-1 mb-16 flex flex-wrap justify-center md:px-0 px-5'>
+        <div className='flex gap-1'>
+          ©2024 by MyKozan LLC <span className='md:block hidden'> | </span>
         </div>
-      </a>
+        <div>
+          Developed by <span className='text-[#C50707]'>  <a href='http://arrowthought.com/' target='_blank'>  Arrow Thought </a>   </span>
+        </div>
+
+      </div >
+
     </>
   )
 }

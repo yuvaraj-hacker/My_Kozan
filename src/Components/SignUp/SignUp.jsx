@@ -16,7 +16,7 @@ function SignUp() {
                           <span className='text-[#00712D]'>   Privacy Policy </span></p>
                     </div>
                     <div className='text-center mt-10'>
-                        <button className='p-3 w-full bg-[#E38734] lg:text-xl text-lg font-bold text-white rounded-lg'>
+                        <button className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200  lg:text-xl text-lg font-bold text-white rounded-lg'>
                             Continue
                         </button>
                     </div>

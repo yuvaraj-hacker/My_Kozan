@@ -1,51 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
-import ProductCard from "../Products/ProductCard";
+const ProductLists = () => {
+  const [visible, setVisible] = useState(true);
 
-export default function ProductsList() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, 5000); 
 
-  const products = [
-    {
-      id: 1,
-      image: "/Images/product1.png",
-      title: "Reusable Wooden Money Box with Counter",
-      price: "5.99",
-      minQty: 50,
-      buttonText: "Buy now"
-    },
-    {
-      id: 2,
-      image: "/Images/product2.png",
-      title: "E-Writing Doodle Board for Kids",
-      price: "8.99",
-      minQty: 60,
-      buttonText: "Buy now"
-    },
-    {
-      id: 3,
-      image: "/Images/product3.png",
-      title: "Selfie Stick",
-      price: "5.99",
-      minQty: 50,
-      buttonText: "Buy now"
-    }
-  ];
+    return () => clearTimeout(timer); 
+  }, []);
 
   return (
-    <>
-    <div className="flex flex-wrap gap-6 justify-center">
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          image={product.image}
-          title={product.title}
-          price={product.price}
-          minQty={product.minQty}
-          buttonText={product.buttonText}
-        />
-      ))}
-    </div>
-   
-    </>
+    visible && (
+      <div className="bg-[#E38734] px-2 py-2 rounded-md inline-block w-[200px] text-center animate-shake animate-infinite animate-duration-[2000ms]">
+        <button className="bg-black text-white w-full py-2 border border-[#a88734] rounded-md">
+          Sign in
+        </button>
+        <p className="text-black text-sm mt-2">
+          New customer? <a href="#" className="text-white font-thin">Start here.</a>
+        </p>
+        
+      </div>
+    )
   );
-}
+};
+
+export default ProductLists;

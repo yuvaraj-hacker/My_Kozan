@@ -1,29 +1,26 @@
-import React, { useRef, useState } from 'react';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-
+import React from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import Swiper1 from '../Swiper/Swiper1';
+import Swiper2 from '../Swiper/Swiper2';
+import Swiper3 from '../Swiper/Swiper3';
 function Home() {
-
   return (
     <>
       <section className="mx-auto max-w-[70rem] px-5 my-10">
         <div className="grid grid-cols-2  text-white lg:gap-0 gap-2  lg:p-4 p-2 rounded-xl bg-[#E38734]">
           <div className="flex justify-center items-center">
             <div>
-              <span className="lg:text-5xl">
+              <span className="md:text-5xl">
                 Boost Your <br />
                 Store's Success <br />
               </span>
-              <span className="lg:text-3xl text-sm font-semibold">
+              <span className="md:text-3xl text-sm font-semibold">
                 with our handpicked, <br />{" "}
               </span>
-              <span className="lg:text-4xl text-sm font-bold">High Profit Products !</span>
-              <div className=' md:mt-0  mt-4'>
-                <button className='bg-black text-white font-semibold lg:p-3 p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
+              <span className="md:text-3xl text-sm font-bold">High Profit Products !</span>
+              <div className=' lg:mt-0  mt-4'>
+                <button className='bg-black text-white font-semibold   lg:px-4 lg:py-3   p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
                   Shop now
                 </button>
               </div>
@@ -62,14 +59,11 @@ function Home() {
         </div>
       </section>
       <section className='my-10'>
-
         <h1 className='text-center md:text-3xl text-xl border bg-[#00712D] w-fit mx-auto text-white p-2 rounded-lg ' >Products</h1>
         <section className='grid lg:grid-cols-1 grid-cols-2 gap-2 lf:mx-0 mx-2 '>
-
           <section className='mx-auto lg:max-w-[70rem] max-w-[20rem] md:px-5 '>
-
-            <div className='bg-[#00712D]  grid lg:grid-cols-5 grid-cols-1 lg:gap-0 gap-5  py-5 rounded-lg my-5 '>
-              <div className=' px-5 lg:col-span-1 col-span-4 lg:order-1 order-last flex justify-center items-center mx-auto'>
+            <div className='bg-[#00712D]  grid lg:grid-cols-5  grid-cols-1 lg:gap-0 gap-5  py-5 rounded-lg my-5 '>
+              <div className=' px-5 lg:col-span-1 col-span-4  lg:order-first order-last   flex justify-center items-center mx-auto'>
                 <div className=' '>
                   <p className="text-white md:text-xl text-sm">Reusable Wooden
                     Money Box with
@@ -79,106 +73,15 @@ function Home() {
                   <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl text-sm mt-2 font-semibold  hover:scale-105 duration-200'>Buy now</button>
                 </div>
               </div>
-              <div className='flex justify-center w-full flex-wrap   lg:px-10 px-5 col-span-4 '>
-                <Swiper
-                  slidesPerView={3}
-                  loop={true}
-                  spaceBetween={30}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      centeredSlides: true,
-                      spaceBetween: 10,
-                    },
-                    600: {
-                      slidesPerView: 1,
-
-                      spaceBetween: 10,
-                    },
-
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                  }}
-                  autoplay={{
-                    delay: 1000,
-                    disableOnInteraction: false,
-                  }}
-                  modules={[Pagination, Navigation, Autoplay]}
-                >
-                  <SwiperSlide>
-                    <img src="/Images/product1.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product2.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product3.png" alt="product3" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product1.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product2.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product3.png" alt="product3" />
-                  </SwiperSlide>
-                </Swiper>
+              <div className='flex justify-center w-full flex-wrap   lg:px-0  px-5 col-span-4 '>
+                <Swiper1/>
               </div>
             </div>
           </section>
           <section className='mx-auto lg:max-w-[70rem] max-w-[20rem] md:px-5'>
             <div className='bg-[#FFF3C1] grid lg:grid-cols-5   grid-cols-1 lg:gap-0 gap-5  py-5 rounded-lg my-5 '>
               <div className='flex justify-center w-full flex-wrap  col-span-4 lg:px-10 px-5 gap-5 '>
-                <Swiper
-                  slidesPerView={3}
-                  loop={true}
-                  spaceBetween={30}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      centeredSlides: true,
-                      spaceBetween: 10,
-                    },
-                    600: {
-                      slidesPerView: 1,
-
-                      spaceBetween: 10,
-                    },
-
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                  }}
-                  autoplay={{
-                    delay: 1000,
-                    reverseDirection: true,
-                    disableOnInteraction: false,
-                  }}
-                  modules={[Pagination, Navigation, Autoplay]}
-                >
-                  <SwiperSlide>
-                    <img src="/Images/product4.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product5.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product6.png" alt="product3" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product4.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product5.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product6.png" alt="product3" />
-                  </SwiperSlide>
-                </Swiper>
+                <Swiper2/>
               </div>
               <div className=' px-5  lg:col-span-1 col-span-4 flex justify-center items-center'>
                 <div className='text-[#00712D]'>
@@ -187,7 +90,7 @@ function Home() {
                     Kids...</p>
                   <p className="md:mt-2  mt-7 "> <span className='md:text-lg text-base  font-bold ' >$8.99 </span>
                     (Min. 50 Pcs)</p>
-                  <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl mt-2 text-sm  font-semibold  hover:scale-105 duration-200 '>Buy now</button>
+                  <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl mt-2 text-sm  font-semibold text-black  hover:scale-105 duration-200 '>Buy now</button>
                 </div>
               </div>
             </div>
@@ -202,69 +105,12 @@ function Home() {
                   <button className='bg-[#E38734] md:px-5 px-5 py-2 rounded-lg lg:text-xl mt-2 font-semibold text-sm hover:scale-105 duration-200'>Buy now</button>
                 </div>
               </div>
-              <div className='flex justify-center items-center lg:w-full flex-wrap  col-span-4 lg:px-10 px-5 md:py-0   gap-5 '>
-                <Swiper
-                  slidesPerView={3}
-                  loop={true}
-                  spaceBetween={30}
-
-                  autoplay={{
-                    delay: 1000,
-                    disableOnInteraction: false,
-                  }}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                      centeredSlides: true,
-                      spaceBetween: 10,
-                    },
-                    600: {
-                      slidesPerView: 1,
-
-                      spaceBetween: 10,
-                    },
-
-                    1024: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                  }}
-                  modules={[Pagination, Navigation, Autoplay]}
-                >
-                  <SwiperSlide>
-                    <img src="/Images/product7.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product8.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product9.png" alt="product3" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product7.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product8.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product9.png" alt="product3" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product7.png" alt="product1" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product8.png" alt="product2" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src="/Images/product9.png" alt="product3" />
-                  </SwiperSlide>
-                </Swiper>
+              <div className='flex justify-center items-center lg:w-full flex-wrap  col-span-4 lg:px-0 px-5 md:py-0   gap-5 '>
+                <Swiper3/>
               </div>
             </div>
           </section>
-
         </section>
-
       </section>
     </>
   )
