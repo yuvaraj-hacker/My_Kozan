@@ -11,19 +11,19 @@ export default function Header() {
         <div className="flex mx-auto max-w-[70rem] px-5 justify-between items-center">
           <div className="flex items-center gap-5 md:gap-10">
             <img
-              className="lg:w-auto w-[150px]"
+              className="lg:w-auto w-[150px] md:block  hidden"
               src="/Images/My_Kozan.png"
               alt="logo"
             />
             <div className="relative hidden md:block w-[30vw]">
               <input
                 placeholder="Search"
-                className="w-full rounded-md px-2 py-1 border focus:outline-orange-400 " 
+                className="w-full rounded-md px-2 py-1 border focus:outline-orange-400 "
               />
               <img
-                src="/Images/Search.png" 
+                src="/Images/Search.png"
                 alt="search icon"
-                className="absolute animate-pulse animate-infinite right-3 top-1/2 transform -translate-y-1/2 w-5 h-5" 
+                className="absolute animate-pulse animate-infinite right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
               />
             </div>
             <div className="md:flex gap-5 md:block  hidden">
@@ -49,9 +49,29 @@ export default function Header() {
               />
             </div>
           </div>
-          <div>
+          <div className="md:block hidden">
             <Hamburger toggled={isOpen} toggle={setOpen} />
           </div>
+          <div className="md:hidden block w-full flex items-center justify-between">
+            <div>
+              <Hamburger toggled={isOpen} toggle={setOpen} />
+            </div>
+            <div>
+              <img
+                className="lg:w-auto w-[150px] "
+                src="/Images/My_Kozan.png"
+                alt="logo"
+              />
+            </div>
+            <div>
+              <img
+                src="/Images/Search.png"
+                alt="search icon"
+
+              />
+            </div>
+          </div>
+
         </div>
       </header>
       <div
