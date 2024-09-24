@@ -8,6 +8,7 @@ import ProductCard from "../Shared/Components/Products/ProductCard";
 import Order from "../Components/OrderPage/Order";
 import ProductPage from "../Components/ProductPage/ProductPage";
 import Sign from "../Components/SignUpPage/Sign";
+import Product from "../Shared/Components/Product/Product";
 export default function Approuter() {
     return (
         <>
@@ -22,24 +23,10 @@ export default function Approuter() {
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/signup" element={<Sign/>} />
                         <Route path="/order" element={<Order />} />
+                        <Route path="/product" element={<Product />} />
                     </Route >
                 </Routes>
             </BrowserRouter>
         </>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

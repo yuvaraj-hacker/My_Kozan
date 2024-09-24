@@ -18,7 +18,7 @@ const ProductLists = () => {
           Sign in
         </button>
         <p className="text-black text-sm mt-2">
-          New customer? <a href="#" className="text-white font-thin">Start here.</a>
+          New customer? <a href="#" className="text-white font-semi">Start here.</a>
         </p>
         
       </div>

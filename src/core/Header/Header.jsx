@@ -42,16 +42,16 @@ export default function Header() {
                 </Link> */}
                 <Link to="/cart">
                   <img
-                    className="cursor-pointer h-8"
-                    src="/assets/Images/Header/Cart.png"
+                    className="cursor-pointer h-8 opacity-85"
+                    src="/assets/Images/Header/ccc.png"
                     alt="cart"
                   />
                 </Link>
                 <Link to='/signup'>
                   <div className="relative">
                     <img
-                      className="cursor-pointer h-8"
-                      src="/assets/Images/Header/User.png"
+                      className="cursor-pointer h-8 opacity-85"
+                      src="/assets/Images/Header/gg.png"
                       alt="user"
                     />
 
@@ -76,31 +76,52 @@ export default function Header() {
         </div>
       </header>
       <div
-        className={`fixed top-0 right-0 h-full bg-white shadow-lg w-[250px] transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 h-full bg-white shadow-lg   w-[260px] transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
           } z-50`}
       >
-        <div className="p-5">
-          <div className="flex gap-5">
+        <div className="p-4 ">
+          <div className="flex gap-5 justify-between ">
+            <div className="2xl:hidden    xl:block  lg:block md:block  hidden    ">
 
-            <h2 className="text-lg font-bold mb-4 lg:mt-0 mt-2">Menu</h2>
+
+              <Hamburger toggled={isOpen} toggle={setOpen} />
+            </div>
+            <div className="2xl:block   xl:hidden  lg:hidden md:hidden block ">
+
+            </div>
+            <h2 className="lg:text-2xl text-lg font-bold mb-4 lg:mt-0 mt-2  text-[#E38734] ">Menu</h2>
           </div>
-          <div className="space-y-4">
+          <div>
+
+          </div>
+
+
+          <div className="space-y-4 mt-5 text-right text-base font-semibold ">
+
+
             <div>
               <Link to="/" onClick={() => setOpen(false)}>
-                <div className="hover:text-orange-500 cursor-pointer">Home</div>
+                <div className="hover:text-orange-500 cursor-pointer hover:scale-105 duration-200">Home</div>
               </Link>
             </div>
             <div>
               <Link to="/aboutus" onClick={() => setOpen(false)}>
-                <div className="hover:text-orange-500 cursor-pointer">
+                <div className="hover:text-orange-500 cursor-pointer hover:scale-105 duration-200">
                   About Us
                 </div>
               </Link>
             </div>
             <div>
-              <Link to="/products" onClick={() => setOpen(false)}>
-                <div className="hover:text-orange-500 cursor-pointer">
+              <Link to="/product" onClick={() => setOpen(false)}>
+                <div className="hover:text-orange-500 cursor-pointer hover:scale-105 duration-200">
                   Products
+                </div>
+              </Link>
+            </div>
+            <div>
+              <Link to="/products" onClick={() => setOpen(false)}>
+                <div className="hover:text-orange-500 cursor-pointer hover:scale-105 duration-200">
+                  Product View
                 </div>
               </Link>
             </div>
@@ -113,17 +134,30 @@ export default function Header() {
             </div> */}
             <div>
               <Link to="/cart" onClick={() => setOpen(false)}>
-                <div className="hover:text-orange-500 cursor-pointer">Cart</div>
+                <div className="hover:text-orange-500 cursor-pointer hover:scale-105 duration-200">Cart</div>
               </Link>
             </div>
+
+            {/* <div>
+              <Link to="/cart" onClick={() => setOpen(false)}>
+                <div className="hover:text-orange-500 cursor-pointer">My Orders</div>
+              </Link>
+            </div> */}
             <div>
               <Link to="/signup" onClick={() => setOpen(false)}>
-                <div className="hover:text-orange-500 cursor-pointer">
+                <div className="hover:text-orange-500 cursor-pointer hover:scale-105 duration-200">
                   Sign Up
                 </div>
               </Link>
             </div>
+
           </div>
+
+          {isOpen && (
+            <div className="absolute 2xl:top-8 top-14 right-[103px] h-[300px] w-[300px]">
+              <img src="/assets/Images/Header/finn.png" alt="kkk" className="object-cover" />
+            </div>
+          )}
         </div>
       </div>
       {isOpen && (
@@ -135,3 +169,6 @@ export default function Header() {
     </>
   );
 }
+
+
+

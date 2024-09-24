@@ -1,90 +1,145 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const productDetails = [
+  {
+    image: "/assets/Images/ProductPage/productview-6.png",
+    rating: "4.5",
+    reviews: "2,264 Ratings & 195 Reviews",
+    price: "$5.99",
+    specifications: [
+      { key: "Sales Package", value: "Pack of 1 Cloth Dryer Stand" },
+      { key: "Pack of", value: "1" },
+    ],
+    general: [
+      { key: "Material", value: "Wood" },
+      { key: "Shape", value: "Piggy Bank" },
+      { key: "Place of Origin", value: "China" },
+      { key: "Brand Name", value: "No" },
+      { key: "Modal Number", value: "No" },
+      { key: "Design", value: "Customized Designs" },
+      { key: "MOQ", value: "50 Pcs" },
+      { key: "Product name", value: "Reusable Wooden Money Box with Counter" },
+      { key: "Usage", value: "Coin Saving Bank" },
+      { key: "Function", value: "Save Money Bank" },
+    ],
+  },
+  {
+    image: "/assets/Images/Products/product2.png",
+    rating: "4.7",
+    reviews: "1,500 Ratings & 100 Reviews",
+    price: "$6.99",
+    specifications: [
+      { key: "Sales Package", value: "Pack of 1 Wooden Box" },
+      { key: "Pack of", value: "2" },
+    ],
+    general: [
+      { key: "Material", value: "Wood and Metal" },
+      { key: "Shape", value: "Rectangular Box" },
+      { key: "Place of Origin", value: "India" },
+      { key: "Brand Name", value: "No" },
+      { key: "Modal Number", value: "Model123" },
+      { key: "Design", value: "Handcrafted Designs" },
+      { key: "MOQ", value: "30 Pcs" },
+      { key: "Product name", value: "Reusable Wooden Money Box with Counter" },
+      { key: "Usage", value: "Coin and Note Saving Box" },
+      { key: "Function", value: "Money Storage" },
+    ],
+  },
+
+];
+
+
 function ProductCard() {
+  const [currentProduct, setCurrentProduct] = useState(productDetails[0]);
+
+  const handleImageClick = (index) => {
+    setCurrentProduct(productDetails[index]);
+  };
+
+  const handleAddToCart = () => {
+    alert('Cart added successfully!');
+  };
+
   return (
-    <>
-      <section className='mx-auto max-w-[70rem] px-5 my-10'>
-        <div className="grid md:grid-cols-10 sm:grid-cols-5  gap-5  ">
-          <div className='col-span-1 flex flex-col gap-3'>
-            <img className='w-full ' src="/assets/Images/ProductPage/productview-1.png" alt="" />
-            <img className='w-full ' src="/assets/Images/ProductPage/productview-2.png" alt="" />
-            <img className='w-full ' src="/assets/Images/ProductPage/productview-3.png" alt="" />
-            <img className='w-full ' src="/assets/Images/ProductPage/productview-4.png" alt="" />
-            <img className='w-full ' src="/assets/Images/ProductPage/productview-5.png" alt="" />
-          </div>
-          <div className='col-span-4  flex flex-col '>
-            <img className= ' ' src="/assets/Images/ProductPage/productview-6.png" alt="" />
-            <div className='flex  justify-between px-4 mt-4'>
-              <button className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200   bg-[#E38734]'>
-                <span> <img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span> Add to Cart
-              </button>
+    <section className='mx-auto max-w-[70rem] px-5 my-10'>
+      <div className="grid md:grid-cols-10 sm:grid-cols-1 gap-5">
 
-              <button className='border py-2 px-3 rounded-lg hover:scale-105 duration-200 text-white  bg-[#00712D]'>
-                Buy now
+
+
+        <div className='col-span-1 flex flex-col gap-3'>
+          {productDetails.map((product, index) => (
+            <img
+              key={index}
+              className='w-full cursor-pointer'
+              src={product.image}
+              alt={`product-${index + 1}`}
+              onClick={() => handleImageClick(index)}
+            />
+          ))}
+        </div>
+
+        <div className='col-span-4 flex flex-col'>
+          <img className='sm:h-[400px] h-[200px] w-[425px] ' src={currentProduct.image} alt="selected product" />
+          <div className='flex justify-between px-4 mt-4'>
+            <button className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734]' onClick={handleAddToCart} >
+              <span><img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span> Add to Cart
+            </button>
+            <Link to='/order'>
+
+              <button className='border py-2 px-3 rounded-lg hover:scale-105 duration-200 text-white bg-[#00712D]'>
+                Buy Now
               </button>
+            </Link>
+          </div>
+
+        </div>
+        <div className='col-span-5 flex flex-col gap-3'>
+          <p className="text-xl text-gray-400">{currentProduct.general.find(g => g.key === "Product name").value}</p>
+          <div className='flex items-center gap-3'>
+            <div className='flex gap-4 bg-[#00712D] py-2 px-4 rounded-lg'>
+              <p className="text-white text-xl">{currentProduct.rating}</p>
+              <img className='h-4 mt-1' src="/assets/Images/WishList/Star (2).png" alt="star" />
+            </div>
+            <p className='text-lg text-gray-400'>{currentProduct.reviews}</p>
+          </div>
+          <p className="text-[#E38734] text-lg">
+            <span className='text-2xl font-bold'>{currentProduct.price}</span> (Min. 50 Pcs)
+          </p>
+          <div className='border mt-5'>
+            <div className="border-b-2 p-4">
+              <p className="text-xl font-bold">Specifications</p>
+            </div>
+            <div>
+              <p className="px-4 py-2 text-xl">In The Box</p>
+              <div className='grid grid-cols-3 p-4 text-gray-400 gap-1 grid-rows-2'>
+                {currentProduct.specifications.map((spec, index) => (
+                  <React.Fragment key={index}>
+                    <p className="col-span-1">{spec.key}</p>
+                    <p className="col-span-2">{spec.value}</p>
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
           </div>
-          <div className='col-span-5 flex flex-col gap-3 '>
-            <p className=" text-xl text-gray-400"> Reusable Wooden Money Box with Counter...</p>
-            <div className='flex items-center gap-3 '>
-              <div className='flex gap-3  bg-[#00712D] py-2 px-4 rounded-lg'>
-                <p className="text-white text-xl">4.5</p>
-                <img className='h-4 mt-1' src="/assets/Images/WishList/Star (2).png" alt="" />
-              </div>
-              <p className='text-lg text-gray-400'>2,264 Ratings & 195 Reviews</p>
-            </div >
-            <p className="text-[#E38734] text-lg"> <span className='text-2xl font-bold'> $5.99 </span>
-              (Min. 50 Pcs)</p>
-            <div className='border mt-5'>
-              <div className="border-b-2 p-4">
-                <p className="text-xl font-bold  ">Specifications</p>
-              </div>
-              <div>
-                <p className="px-4 py-2 text-xl">
-                  In The Box
-                </p>
-                <div className='grid grid-cols-3 p-4 text-gray-400  gap-1 grid-rows-2'>
-                  <p className="col-span-1">Sales Package </p>
-                  <p className="col-span-2">  Pack of 1 Cloth Dryer Stand</p>
-                  <p className="col-span-1">Pack of</p>
-                  <p className="col-span-2">1</p>
-                </div>
-
-              </div>
-            </div>
-            <div className='border '>
-              <div>
-                <p className="px-4 py-2 text-xl" >
-                  General
-                </p>
-                <div className='grid grid-cols-3 text-gray-400 p-4 gap-1 grid-rows-2'>
-                  <p className="col-span-1">Material</p>
-                  <p className="col-span-2">Wood</p>
-                  <p className="col-span-1">Shape</p>
-                  <p className="col-span-2">Piggy Bank</p>
-                  <p className="col-span-1">Place of Origin </p>
-                  <p className="col-span-2">China</p>
-                  <p className="col-span-1">Brand Name</p>
-                  <p className="col-span-2">No</p>
-                  <p className="col-span-1">Modal Number</p>
-                  <p className="col-span-2">No</p>
-                  <p className="col-span-1">Design</p>
-                  <p className="col-span-2">Customized Designs</p>
-                  <p className="col-span-1">MOQ</p>
-                  <p className="col-span-2">50 Pcs</p>
-                  <p className="col-span-1">Product name</p>
-                  <p className="col-span-2">Reusable Wooden Money Box with Counter</p>
-                  <p className="col-span-1">Usage</p>
-                  <p className="col-span-2">Coin Saving Bank</p>
-                  <p className="col-span-1">Function </p>
-                  <p className="col-span-2">Save Money Bank</p>
-                </div>
-
+          <div className='border'>
+            <div>
+              <p className="px-4 py-2 text-xl">General</p>
+              <div className='grid grid-cols-3 text-gray-400 p-4 gap-1 grid-rows-2'>
+                {currentProduct.general.map((gen, index) => (
+                  <React.Fragment key={index}>
+                    <p className="col-span-1">{gen.key}</p>
+                    <p className="col-span-2">{gen.value}</p>
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
-  )
+      </div>
+    </section>
+  );
 }
-export default ProductCard
+
+export default ProductCard;
+

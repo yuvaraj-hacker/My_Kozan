@@ -20,7 +20,7 @@ function HeroSection() {
                                 <Link to='/products'>
 
                                     <button className='bg-black text-white font-semibold   lg:px-4 lg:py-3   p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
-                                        Shop now
+                                        Shop Now
                                     </button>
                                 </Link>
                             </div>
@@ -30,17 +30,23 @@ function HeroSection() {
                         <div className='grid grid-cols-3 lg:gap-0 gap-3'>
                             <div className='flex justify-center '>
                                 <div className='lg:space-y-10  space-y-3'>
-                                    <img className='' src="/assets/Images/HeroSection/image1.png" alt="" />
-                                    <img src="/assets/Images/HeroSection/image4.png" alt="" />
+
+                                    <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image1.png" alt="" />
+
+
+                                    <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image4.png" alt="" />
+
                                 </div>
                             </div>
-                            <div className='flex justify-center'>
-                                <img src="/assets/Images/HeroSection/image2.png" alt="" />
+                            
+                            <div className='flex justify-center '>
+                                <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image2.png" alt="" />
                             </div>
                             <div className='flex justify-center'>
                                 <div className='lg:space-y-10 space-y-3 '>
-                                    <img src="/assets/Images/HeroSection/image3.png" alt="" />
-                                    <img src="/assets/Images/HeroSection/image5.png" alt="" />
+
+                                    <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image3.png" alt="" />
+                                    <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image5.png" alt="" />
                                 </div>
                             </div>
                         </div>

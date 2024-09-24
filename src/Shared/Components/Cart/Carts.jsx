@@ -1,12 +1,12 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function Carts() {
     return (
         <>
             <section className="mx-auto max-w-[68rem] py-10 px-5 border  rounded-md  my-10 ">
-                <div className='grid lg:grid-cols-5 grid-cols-1 justify-center items-center'>
+                <div className='grid lg:grid-cols-5 grid-cols-1 gap-5 justify-center items-center'>
                     <div className='col-span-3 '>
-                        <div className='flex flex-col gap-3'>
+                        <div className='flex flex-col gap-5'>
                             <div className='flex flex-wrap '>
                                 <img src="/assets/Images/Products/product-1.png" alt="product1" />
                                 <p className="text-gray-400 ">
@@ -18,9 +18,6 @@ function Carts() {
                             <div className=' flex lg:justify-around'>
                                 <div>
                                 </div>
-                                <button className='bg-[#E38734] px-4 hover:scale-105 duration-200   py-2 text-white rounded-lg' >
-                                    Proceed To Checkout
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -32,14 +29,15 @@ function Carts() {
                                 deatails)</p>
                         </div>
                         <div>
-                            <button className='bg-[#00712D] hover:scale-105 duration-200  text-white  px-4 py-2 rounded-lg mt-32'>
-                                View Cart
-                            </button>
+                            <Link to='/order'>
+                                <button className='bg-[#E38734] px-4 hover:scale-105 duration-200   py-2 text-white rounded-lg' >
+                                    Proceed To Checkout
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section></>
     )
 }
-
 export default Carts

@@ -3,7 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation'; // Import navigation CSS as well
+
+
+
 
 function Swiper1() {
     return (
@@ -28,14 +30,11 @@ function Swiper1() {
                     },
                 }}
                 autoplay={{
-                    delay: 2500, // Adjust delay as needed
-                    reverseDirection: false,
+                
+                  delay:500,
                     disableOnInteraction: false,
                 }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
+                
                 modules={[Pagination, Navigation, Autoplay]}
             >
                 <SwiperSlide>
@@ -62,3 +61,5 @@ function Swiper1() {
 }
 
 export default Swiper1;
+
+
