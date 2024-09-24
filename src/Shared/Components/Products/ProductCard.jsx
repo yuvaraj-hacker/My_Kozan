@@ -3,19 +3,19 @@ function ProductCard() {
   return (
     <>
       <section className='mx-auto max-w-[70rem] px-5 my-10'>
-        <div className="grid md:grid-cols-8  sm:grid-cols-5   gap-5 ">
+        <div className="grid md:grid-cols-10 sm:grid-cols-5  gap-5  ">
           <div className='col-span-1 flex flex-col gap-3'>
-            <img className='w-[60px] h-[60px]' src="/Images/productview-1.png" alt="" />
-            <img className='w-[60px] h-[60px]' src="/Images/productview-2.png" alt="" />
-            <img className='w-[60px] h-[60px]' src="/Images/productview-3.png" alt="" />
-            <img className='w-[60px] h-[60px]' src="/Images/productview-4.png" alt="" />
-            <img className='w-[60px] h-[60px]' src="/Images/productview-5.png" alt="" />
+            <img className='w-full ' src="/assets/Images/ProductPage/productview-1.png" alt="" />
+            <img className='w-full ' src="/assets/Images/ProductPage/productview-2.png" alt="" />
+            <img className='w-full ' src="/assets/Images/ProductPage/productview-3.png" alt="" />
+            <img className='w-full ' src="/assets/Images/ProductPage/productview-4.png" alt="" />
+            <img className='w-full ' src="/assets/Images/ProductPage/productview-5.png" alt="" />
           </div>
-          <div className='col-span-3'>
-            <img src="/Images/productview-6.png" alt="" />
-            <div className='flex justify-between px-4 mt-4'>
+          <div className='col-span-4  flex flex-col '>
+            <img className= ' ' src="/assets/Images/ProductPage/productview-6.png" alt="" />
+            <div className='flex  justify-between px-4 mt-4'>
               <button className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200   bg-[#E38734]'>
-                <span> <img src="/Images/Shopping Cart.png" alt="cart" /></span> Add to Cart
+                <span> <img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span> Add to Cart
               </button>
 
               <button className='border py-2 px-3 rounded-lg hover:scale-105 duration-200 text-white  bg-[#00712D]'>
@@ -23,12 +23,12 @@ function ProductCard() {
               </button>
             </div>
           </div>
-          <div className='col-span-4 flex flex-col gap-3 '>
+          <div className='col-span-5 flex flex-col gap-3 '>
             <p className=" text-xl text-gray-400"> Reusable Wooden Money Box with Counter...</p>
             <div className='flex items-center gap-3 '>
               <div className='flex gap-3  bg-[#00712D] py-2 px-4 rounded-lg'>
                 <p className="text-white text-xl">4.5</p>
-                <img className='h-4 mt-1' src="/Images/Star (2).png" alt="" />
+                <img className='h-4 mt-1' src="/assets/Images/WishList/Star (2).png" alt="" />
               </div>
               <p className='text-lg text-gray-400'>2,264 Ratings & 195 Reviews</p>
             </div >

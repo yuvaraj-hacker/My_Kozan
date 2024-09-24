@@ -1,13 +1,14 @@
 import React from 'react'
-function Cart() {
+
+function Carts() {
     return (
         <>
             <section className="mx-auto max-w-[68rem] py-10 px-5 border  rounded-md  my-10 ">
-                <div className='grid lg:grid-cols-5 justify-center items-center'>
+                <div className='grid lg:grid-cols-5 grid-cols-1 justify-center items-center'>
                     <div className='col-span-3 '>
                         <div className='flex flex-col gap-3'>
-                            <div className='flex flex-wrap gap-5'>
-                                <img src="public/Images/product-1.png" alt="product1" />
+                            <div className='flex flex-wrap '>
+                                <img src="/assets/Images/Products/product-1.png" alt="product1" />
                                 <p className="text-gray-400 ">
                                     Reusable Wooden Money Box with Counter...<br />
                                     <p className='text-[#E38734]'> <span className='text-xl font-bold'>$5.99 </span>
@@ -37,8 +38,8 @@ function Cart() {
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
+            </section></>
     )
 }
-export default Cart
+
+export default Carts

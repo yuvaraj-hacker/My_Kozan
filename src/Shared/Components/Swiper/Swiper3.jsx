@@ -3,13 +3,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-function Swiper1() {
+function Swiper3() {
     return (
         <>
             <Swiper
                 slidesPerView={3}
                 loop={true}
                 spaceBetween={30}
+                autoplay={{
+                    disableOnInteraction: false,
+                }}
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -25,32 +28,28 @@ function Swiper1() {
                         spaceBetween: 30,
                     },
                 }}
-                autoplay={{
-                    delay: 1000,
-                    disableOnInteraction: false,
-                }}
                 modules={[Pagination, Navigation, Autoplay]}
             >
                 <SwiperSlide>
-                    <img src="/Images/product-1.png" alt="product1" />
+                    <img src="/assets/Images/Products/product7.png" alt="product1" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/Images/product2.png" alt="product2" />
+                    <img src="/assets/Images/Products/product8.png" alt="product2" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/Images/product3.png" alt="product3" />
+                    <img src="/assets/Images/Products/product9.png" alt="product3" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/Images/product-1.png" alt="product1" />
+                    <img src="/assets/Images/Products/product7.png" alt="product1" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/Images/product2.png" alt="product2" />
+                    <img src="/assets/Images/Products/product8.png" alt="product2" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/Images/product3.png" alt="product3" />
+                    <img src="/assets/Images/Products/product9.png" alt="product3" />
                 </SwiperSlide>
-            </Swiper>
-        </>
+            
+            </Swiper></>
     )
 }
-export default Swiper1
+export default Swiper3

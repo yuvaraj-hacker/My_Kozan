@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <>
@@ -6,19 +7,21 @@ function Footer() {
         <div className=' mx-auto max-w-[70rem] '>
           <div className='flex justify-between  flex-wrap px-10'>
             <div>
-              <img className='w-[250px] h-[100px]' src="/Images/My_Kozan.png" alt="logo" />
+              <Link to='/'>
+                <img className='w-[250px] h-[100px]' src="/assets/Images/Footer/My_Kozan.png" alt="logo" />
+              </Link>
               <div className='flex gap-5 mt-5'>
-                <div className=' bg-black rounded-sm  p-1' >
-                  <img src="public/Images/Facebook F (1).png" alt="facebook" />
+                <div className=' bg-black rounded-sm    p-1' >
+                  <img className='hover:scale-105 duration-200' src="/assets/Images/Footer/Facebook F (1).png" alt="facebook" />
                 </div>
                 <div className=' bg-black rounded-sm  p-1'>
-                  <img src="/Images/Instagram (1).png" alt="instagram" />
+                  <img className='hover:scale-105 duration-200' src="/assets/Images/Footer/Instagram (1).png" alt="instagram" />
                 </div>
                 <div className=' bg-black rounded-sm  p-1'>
-                  <img src="/Images/TwitterX (1).png" alt="twitter" />
+                  <img className='hover:scale-105 duration-200' src="/assets/Images/Footer/TwitterX (1).png" alt="twitter" />
                 </div>
                 <div className=' bg-black rounded-sm  p-1'>
-                  <img src="/Images/LinkedIn.png" alt="linkedin" />
+                  <img className='hover:scale-105 duration-200' src="/assets/Images/Footer/LinkedIn.png" alt="linkedin" />
                 </div>
               </div>
             </div>
@@ -27,13 +30,36 @@ function Footer() {
                 Quick Links:
               </h1>
               <div className='text-lg space-y-2 mt-3'>
-                <p>About Us</p>
-                <p>
-                  Products</p>
-                <p>Support</p>
-                <p>
-                  WishList</p>
-                <p>Cart</p>
+
+
+
+
+                <div>
+                  <Link to='aboutus'>
+                    <p>About Us</p>
+                  </Link>
+                </div>
+                <div>
+                  <Link to='/products'>
+
+                    <p>
+                      Products</p>
+                  </Link>
+                </div>
+                <div>
+                  <Link to='/'>
+
+                    <p>Support</p>
+                  </Link>
+                </div>
+                {/* <p>
+                  WishList</p> */}
+                <div>
+                  <Link to='/cart'>
+
+                    <p>Cart</p>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className='lg:text-right text-white md:mt-0 mt-5'>

@@ -1,5 +1,6 @@
 import React from 'react'
-function Order() {
+
+function Orders() {
     return (
         <>
             <section className='lg:h-[calc(100vh-300px)] max-w-[70rem] my-20  px-2 mx-auto  flex justify-center items-center '>
@@ -45,8 +46,8 @@ function Order() {
                         <p className='font-bold text-gray-400'>Payment Option</p>
                     </div>
                 </div>
-            </section>
-        </>
+            </section></>
     )
 }
-export default Order
+
+export default Orders
