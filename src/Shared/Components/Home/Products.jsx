@@ -24,7 +24,7 @@ function Products() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className='flex justify-center w-full flex-wrap   lg:px-0     px-5 col-span-4 '>
+                            <div className='flex justify-center w-full flex-wrap   lg:px-1     px-5 col-span-4 '>
                                 <Swiper1 />
                             </div>
                         </div>
@@ -60,7 +60,7 @@ function Products() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className='flex justify-center items-center lg:w-full flex-wrap  col-span-4 lg:px-0 px-5 md:py-0   gap-5 '>
+                            <div className='flex justify-center items-center lg:w-full flex-wrap  col-span-4 lg:px-1 px-5 md:py-0   gap-5 '>
                                 <Swiper3 />
                             </div>
                         </div>

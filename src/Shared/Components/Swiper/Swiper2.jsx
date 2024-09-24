@@ -3,6 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
+import 'swiper/css/navigation';
+
+
+
 function Swiper2() {
     return (
         <>
@@ -10,6 +15,7 @@ function Swiper2() {
                 slidesPerView={3}
                 loop={true}
                 spaceBetween={30}
+                navigation 
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -26,7 +32,7 @@ function Swiper2() {
                     },
                 }}
                 autoplay={{
-                
+                    delay:1000,
                     reverseDirection: true,
                     disableOnInteraction: false,
                 }}

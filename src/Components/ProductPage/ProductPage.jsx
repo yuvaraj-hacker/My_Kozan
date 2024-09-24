@@ -4,34 +4,34 @@ import axios from 'axios';
 
 const ProductPage = () => {
 
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true); 
+    // const [products, setProducts] = useState([]);
+    // const [loading, setLoading] = useState(true); 
    
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const response = await axios.get('http://localhost:3000/products/products'); 
-                setProducts(response.data); 
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching products:', error);
-                setLoading(false);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchProducts = async () => {
+    //         try {
+    //             const response = await axios.get('http://localhost:3000/products/products'); 
+    //             setProducts(response.data); 
+    //             setLoading(false);
+    //         } catch (error) {
+    //             console.error('Error fetching products:', error);
+    //             setLoading(false);
+    //         }
+    //     };
 
-        fetchProducts();
-    }, []);
+    //     fetchProducts();
+    // }, []);
 
-    if (loading) {
-        return <div>Loading products...</div>;
-    }
+    // if (loading) {
+    //     return <div>Loading products...</div>;
+    // }
 
-    // const products = [
-    //     { Product_Name:'Reusable Wooden Money Box with Counter...' , Images:`/Images/product1.png` , Sale_Price:'5.99' , piece:'50' },
-    //     { Product_Name:'E-Writing Doodle Board for Kids...' , Images:'/Images/product4.png' , Sale_Price:'8.99' , piece:'50' },
-    //     { Product_Name:'Selfie Stick' , Images:'/Images/product7.png' , Sale_Price:'5.99' , piece:'50' },
-    //     { Product_Name:'E-Writing Doodle Board for Kids...' , Images:'/Images/product5.png' , Sale_Price:'8.99' , piece:'50' }
-    // ]
+    const products = [
+        { Product_Name:'Reusable Wooden Money Box with Counter...' , Images:`/Images/product1.png` , Sale_Price:'5.99' , piece:'50' },
+        { Product_Name:'E-Writing Doodle Board for Kids...' , Images:'/Images/product4.png' , Sale_Price:'8.99' , piece:'50' },
+        { Product_Name:'Selfie Stick' , Images:'/Images/product7.png' , Sale_Price:'5.99' , piece:'50' },
+        { Product_Name:'E-Writing Doodle Board for Kids...' , Images:'/Images/product5.png' , Sale_Price:'8.99' , piece:'50' }
+    ]
 
   return (
     <>
