@@ -7,8 +7,11 @@ import Cart from "../Components/CartPage/Cart";
 import ProductCard from "../Shared/Components/Products/ProductCard";
 import Order from "../Components/OrderPage/Order";
 import ProductPage from "../Components/ProductPage/ProductPage";
-import Sign from "../Components/SignUpPage/Sign";
 import Product from "../Shared/Components/Product/Product";
+import Login from "../Shared/Components/Login/Login.jsx";
+import SignUp from "../Components/SignUpPage/SignUp.jsx";
+import PrivacyPolicy from "../Components/Policy/PrivacyPolicy.jsx";
+import DoodleBoard from "../Components/DoodleBoard/DoodleBoard.jsx";
 export default function Approuter() {
     return (
         <>
@@ -21,9 +24,12 @@ export default function Approuter() {
                         <Route path="/productpage" element={<ProductPage />} />
                         <Route path="/wishlist" element={<Wishlist />} />
                         <Route path="/cart" element={<Cart />} />
-                        <Route path="/signup" element={<Sign/>} />
+                        <Route path="/login" element={<Login/>} />
                         <Route path="/order" element={<Order />} />
                         <Route path="/product" element={<Product />} />
+                        <Route path="/signin" element={<SignUp />} />
+                        <Route path="/privacy" element={<PrivacyPolicy />} />
+                        <Route path="/doodle" element={<DoodleBoard />} />
                     </Route >
                 </Routes>
             </BrowserRouter>

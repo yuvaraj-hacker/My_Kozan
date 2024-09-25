@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Carts() {
     return (
         <>
-            <section className="mx-auto max-w-[68rem] py-10 px-5 border  rounded-md  my-10 ">
+            <section className="mx-auto max-w-[68rem] py-10 px-5 border  rounded-md  my-20">
                 <div className='grid lg:grid-cols-5 grid-cols-1 gap-5 justify-center items-center'>
                     <div className='col-span-3 '>
                         <div className='flex flex-col gap-5'>

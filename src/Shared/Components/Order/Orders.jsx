@@ -1,5 +1,4 @@
 import React from 'react'
-
 function Orders() {
     return (
         <>
@@ -49,5 +48,4 @@ function Orders() {
             </section></>
     )
 }
-
 export default Orders

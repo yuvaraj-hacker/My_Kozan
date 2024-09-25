@@ -1,5 +1,4 @@
 import React from 'react'
-
 function About() {
     return (
         <>
@@ -16,5 +15,4 @@ function About() {
             </section></>
     )
 }
-
 export default About

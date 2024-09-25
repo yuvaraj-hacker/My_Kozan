@@ -3,16 +3,16 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 const productDetails = [
   {
-    image: "/assets/Images/ProductPage/productview-6.png",
-    rating: "4.5",
+    image: "/assets/Images/Products/product4.png",
+    rating: "4.6",
     reviews: "2,264 Ratings & 195 Reviews",
-    price: "$5.99",
+    price: "$8.99",
     specifications: [
       { key: "Sales Package", value: "Pack of 1 Cloth Dryer Stand" },
       { key: "Pack of", value: "1" },
     ],
     general: [
-      { key: "Material", value: "Wood" },
+      { key: "Material", value: "Plastic" },
       { key: "Shape", value: "Piggy Bank" },
       { key: "Place of Origin", value: "China" },
       { key: "Brand Name", value: "No" },
@@ -25,10 +25,10 @@ const productDetails = [
     ],
   },
   {
-    image: "/assets/Images/Products/product2.png",
+    image: "/assets/Images/Products/product5.png",
     rating: "4.7",
     reviews: "1,500 Ratings & 100 Reviews",
-    price: "$6.99",
+    price: "$8.99",
     specifications: [
       { key: "Sales Package", value: "Pack of 1 Wooden Box" },
       { key: "Pack of", value: "2" },
@@ -47,7 +47,7 @@ const productDetails = [
     ],
   },
 ];
-function ProductCard() {
+function Doodle() {
   const [currentProductImage, setCurrentProductImage] = useState(productDetails[0].image);
   const [cart, setCart] = useState([]);
   const [zoom, setZoom] = useState({ backgroundPosition: '0% 0%', backgroundSize: '100%' });
@@ -167,4 +167,4 @@ function ProductCard() {
     </section>
   );
 }
-export default ProductCard;
+export default Doodle;

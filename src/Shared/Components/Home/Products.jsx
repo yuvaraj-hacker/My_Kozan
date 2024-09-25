@@ -19,7 +19,6 @@ function Products() {
                                     <p className="text-white mt-2"> <span className='md:text-lg text-base  font-bold' >$5.99 </span>
                                         (Min. 50 Pcs)</p>
                                     <Link to='/product'>
-
                                         <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl text-sm mt-2 font-semibold  hover:scale-105 duration-200'>Buy Now</button>
                                     </Link>
                                 </div>
