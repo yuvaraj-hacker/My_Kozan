@@ -4,70 +4,99 @@ import { Link, useLocation } from "react-router-dom";
 import ProductLists from "../../Shared/Components/Products/ProductLists";
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
+  const [isSearchActive, setSearchActive] = useState(false);
   const toggleMenu = () => {
     if (!isOpen) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setOpen(!isOpen);
   };
+  const handleSearchFocus = () => {
+    setSearchActive(true); 
+  };
+  const handleSearchBlur = () => {
+    setSearchActive(false); 
+  };
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
   return (
     <>
       <header className="w-full border-b-2 md:py-0 py-3 z-50 fixed top-0 bg-white shadow-sm border-b-gray-200">
-        <div className="grid mx-auto max-w-[68rem] md:grid-cols-10 grid-cols-3 justify-between items-center  2xl:px-0 px-5">
-          <div className="flex justify-between items-center md:col-span-9 col-span-1">
-            <div className="flex items-center gap-4 md:gap-10">
-              <Link to='/'>
+        <div className="  max-w-[70rem] px-5  mx-auto  ">
+          <div className="flex  md:justify-between  items-center ">
+            <Link to='/'>
+              <img
+                className="lg:w-auto w-[150px]  hidden md:block"
+                src="/assets/Images/Header/My_Kozan1.png"
+                alt="logo"
+              />
+            </Link>
+            <div className="relative hidden md:block w-[30vw] cursor-pointer " >
+              <input
+                placeholder="Search"
+                className="w-full rounded-md px-2 py-1 border focus:outline-[#E38734]"
+                onFocus={handleSearchFocus}  
+                onBlur={handleSearchBlur}    
+               />
+              <img
+                src="/assets/Images/Header/Search.png"
+                alt="search icon"
+                className="absolute animate-pulse animate-infinite right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+              />
+            </div>
+            <div className="md:flex gap-5 hidden">
+            <Link to="/product">
                 <img
-                  className="lg:w-auto w-[150px]"
-                  src="/assets/Images/Header/My_Kozan1.png"
-                  alt="logo"
+                  className="cursor-pointer h-7 opacity-85"
+                  src="/assets/Images/Header/Shop.png"
+                  alt="shop"
+                  title="shop"
                 />
               </Link>
-              <div className="relative hidden md:block w-[30vw]">
-                <input
-                  placeholder="Search"
-                  className="w-full rounded-md px-2 py-1 border focus:outline-orange-400"
-                />
+              <Link to="/cart">
                 <img
-                  src="/assets/Images/Header/Search.png"
-                  alt="search icon"
-                  className="absolute animate-pulse animate-infinite right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+                  className="cursor-pointer h-7 opacity-85"
+                  src="/assets/Images/Header/Shopping Cart (1).png"
+                  alt="cart"
+                   title="Cart"
                 />
-              </div>
-              <div className="md:flex gap-5 hidden">
-                <Link to="/cart">
+              </Link>
+              <Link to='/login'>
+                <div className="relative">
                   <img
-                    className="cursor-pointer h-8 opacity-85"
-                    src="/assets/Images/Header/ccc.png"
-                    alt="cart"
+                    className="cursor-pointer h-7 opacity-85"
+                    src="/assets/Images/Header/User.png"
+                    alt="login"
+                    title="login"
                   />
-                </Link>
-                <Link to='/login'>
-                  <div className="relative">
-                    <img
-                      className="cursor-pointer h-8 opacity-85"
-                      src="/assets/Images/Header/gg.png"
-                      alt="user"
-                    />
-                    <div className="absolute top-14">
-                      <ProductLists />
-                    </div>
+                  <div className="absolute top-14 ">
+                    <ProductLists />
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
+            </div>
+            <div className="col-span-1   justify-end items-end  hidden md:block ">
+              <Hamburger toggled={isOpen} toggle={toggleMenu} />
             </div>
           </div>
-          <div className="col-span-1 md:order-last order-first md:flex justify-end items-end">
-            <Hamburger toggled={isOpen} toggle={toggleMenu} />
-          </div>
-          <div className="md:hidden block order-last col-span-1">
-            <img
-              src="/assets/Images/Header/Search (1).png"
-              alt="search icon"
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 w-7 h-7"
-            />
+          <div className="flex  justify-between md:hidden  items-center">
+            <div className="col-span-1  md:flex justify-end items-end">
+              <Hamburger toggled={isOpen} toggle={toggleMenu} />
+            </div>
+            <Link to='/'>
+              <img
+                className="lg:w-auto w-[150px] "
+                src="/assets/Images/Header/My_Kozan1.png"
+                alt="logo"
+              />
+            </Link>
+            <div className="md:hidden block  col-span-1">
+              <img
+                src="/assets/Images/Header/Search (1).png"
+                alt="search icon"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 w-7 h-7"
+              />
+            </div>
           </div>
         </div>
       </header>
@@ -85,11 +114,6 @@ export default function Header() {
             <div>
               <Link to="/" onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 <div className={`" ${isActive('/') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer hover:scale-105 duration-200'}`}>Home</div>
-              </Link>
-            </div>
-            <div>
-              <Link to="/aboutus" onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-                <div className={`" ${isActive('/aboutus') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer hover:scale-105 duration-200'}`}>About Us</div>
               </Link>
             </div>
             <div>
@@ -119,6 +143,12 @@ export default function Header() {
         <div
           className="fixed inset-0 bg-black opacity-50 z-40"
           onClick={() => setOpen(false)}
+        ></div>
+      )}
+      {isSearchActive && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-40"
+          onClick={() => setSearchActive(false)} 
         ></div>
       )}
     </>

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 const productDetails = [
   {
     image: "/assets/Images/Products/product4.png",

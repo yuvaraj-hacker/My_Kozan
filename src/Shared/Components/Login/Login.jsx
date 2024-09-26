@@ -33,7 +33,7 @@ function Login() {
                                     </span>
                                 </div>
                             </div>
-                            <Link to={'/'} className='w-fit block ml-auto hover:underline hover:text-red-600 mt-3'>
+                            <Link to={'/forgot'} className='w-fit block ml-auto hover:underline hover:text-red-600 mt-3'>
                                 Forgot Password ?
                             </Link>
                         </div>

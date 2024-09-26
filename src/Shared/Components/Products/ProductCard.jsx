@@ -95,7 +95,7 @@ function ProductCard() {
               backgroundImage: `url(${currentProductImage})`,
               backgroundSize: zoom.backgroundSize,
               backgroundPosition: zoom.backgroundPosition,
-              backgroundRepeat:'no-repeat'
+              backgroundRepeat: 'no-repeat'
             }}
           >
             <img

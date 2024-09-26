@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "../core/Main/Main";
 import Home from "../Components/HomePage/Home";
-import About from "../Components/AboutPage/AboutUs";
 import Wishlist from "../Components/WishlistPage/Wishlist";
 import Cart from "../Components/CartPage/Cart";
 import ProductCard from "../Shared/Components/Products/ProductCard";
@@ -12,6 +11,7 @@ import Login from "../Shared/Components/Login/Login.jsx";
 import SignUp from "../Components/SignUpPage/SignUp.jsx";
 import PrivacyPolicy from "../Components/Policy/PrivacyPolicy.jsx";
 import DoodleBoard from "../Components/DoodleBoard/DoodleBoard.jsx";
+import Forgot from "../Components/Forgot Password/Forgot.jsx";
 export default function Approuter() {
     return (
         <>
@@ -19,7 +19,6 @@ export default function Approuter() {
                 <Routes>
                     <Route element={<Main />}  >
                         <Route path="/" element={<Home />} />
-                        <Route path="/aboutus" element={<About />} />
                         <Route path="/products" element={<ProductCard />} />
                         <Route path="/productpage" element={<ProductPage />} />
                         <Route path="/wishlist" element={<Wishlist />} />
@@ -30,6 +29,7 @@ export default function Approuter() {
                         <Route path="/signin" element={<SignUp />} />
                         <Route path="/privacy" element={<PrivacyPolicy />} />
                         <Route path="/doodle" element={<DoodleBoard />} />
+                        <Route path="/forgot" element={<Forgot />} />
                     </Route >
                 </Routes>
             </BrowserRouter>
