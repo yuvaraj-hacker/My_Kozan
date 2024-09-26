@@ -79,9 +79,10 @@ function Products() {
                 </h1>
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6 ">
                     {products.map((product, index) => (
-                        <div key={index} className="relative md:w-full md:h-[360px]  hover:shadow-md   group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
-                            <div className='group'>
-                                <Link to='/products'>
+                        <div key={index} className="relative md:w-full md:h-[360px]   hover:shadow-md   group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
+
+                            <div className='group '>
+                                <Link to='/products' >
                                     <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                         <img
                                             src={product.imageSrc}
@@ -89,21 +90,21 @@ function Products() {
                                             className="max-w-[100%] rare md:group-hover:max-w-[50%]"
                                         />
                                     </div>
+
+                                    <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default' >
+                                        <h2 className="text-center text-lg font-semibold mb-2">
+                                            {product.title}
+                                        </h2>
+                                        <p className="text-center text-gray-700 mb-4">
+                                            <span className="text-[#E38734] font-bold text-xl">
+                                                {product.price}
+                                            </span>
+                                            <span className="block text-sm">({product.minOrder})</span>
+                                        </p>
+                                    </div>
                                 </Link>
-                                <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default' >
-                                    <h2 className="text-center text-lg font-semibold mb-2">
-                                        {product.title}
-                                    </h2>
-                                    <p className="text-center text-gray-700 mb-4">
-                                        <span className="text-[#E38734] font-bold text-xl">
-                                            {product.price}
-                                        </span>
-                                        <span className="block text-sm">({product.minOrder})</span>
-                                    </p>
-                                </div>
-                                
                                 <div className='flex justify-around items-center md:mb-0 mb-5'>
-                                    <Link to='/products' onClick={toggleMenu}>
+                                    <Link to='/order' onClick={toggleMenu}>
                                         <button className="bg-[#00712D] hover:scale-105 mt-4 duration-200 text-white py-2 px-4 rounded-lg w-full transition">
                                             {product.buttonText}
                                         </button>
@@ -118,6 +119,7 @@ function Products() {
 
                                 </div>
                             </div>
+
                         </div>
                     ))}
                 </div>
@@ -125,7 +127,7 @@ function Products() {
                     {productss.map((product, index) => (
                         <div key={index} className="relative md:w-full md:h-[360px]   hover:shadow-md  group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
                             <div className='group '>
-                                <Link to='/doodle'>
+                                <Link to='/doodle' onClick={toggleMenu}>
                                     <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                         <img
                                             src={product.imageSrc}
@@ -133,20 +135,21 @@ function Products() {
                                             className="max-w-[100%] rare md:group-hover:max-w-[50%] "
                                         />
                                     </div>
+
+                                    <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
+                                        <h2 className="text-center text-lg font-semibold mb-2">
+                                            {product.title}
+                                        </h2>
+                                        <p className="text-center text-gray-700 mb-4">
+                                            <span className="text-[#E38734] font-bold text-xl">
+                                                {product.price}
+                                            </span>
+                                            <span className="block text-sm">({product.minOrder})</span>
+                                        </p>
+                                    </div>
                                 </Link>
-                                <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
-                                    <h2 className="text-center text-lg font-semibold mb-2">
-                                        {product.title}
-                                    </h2>
-                                    <p className="text-center text-gray-700 mb-4">
-                                        <span className="text-[#E38734] font-bold text-xl">
-                                            {product.price}
-                                        </span>
-                                        <span className="block text-sm">({product.minOrder})</span>
-                                    </p>
-                                </div>
                                 <div className='flex justify-around items-center md:mb-0 mb-5'>
-                                    <Link to='/doodle' onClick={toggleMenu}>
+                                    <Link to='/order' onClick={toggleMenu}>
                                         <button className="bg-[#00712D] mt-4 hover:scale-105 duration-200 text-white py-2 px-4 rounded-lg w-full transition">
                                             {product.buttonText}
                                         </button>
