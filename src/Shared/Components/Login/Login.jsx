@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 function Login() {
-    const [showPassword, setShowPassword] = useState(true)
+    const [showPassword, setShowPassword] = useState(false)
     return (
         <section className='lg:h-[calc(100vh-300px)] my-20  px-2   flex justify-center items-center '>
             <div className='lg:max-w-[30rem]   mx-auto max-h-[40rem] border  '>
@@ -51,7 +51,7 @@ function Login() {
                         </p>
                         <Link to='/signin'>
                             <span className='font-semibold  cursor-pointer'> <div className='flex justify-center items-center'>
-                                <img className='md:w-12 md:h-12 w-9 h-9' src="/assets/Images/sign/nnn.gif" alt="" />
+                                <img className='md:w-12 md:h-12 w-9 h-9 -hue-rotate-60' src="/assets/Images/sign/nnn.gif" alt="" />
                                 <p className=" md:text-base text-sm"> Create an Account</p> </div></span> </Link>
                     </div>
                 </div>

@@ -79,7 +79,7 @@ function Products() {
                 </h1>
                 <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6 ">
                     {products.map((product, index) => (
-                        <div key={index} className="relative md:w-full md:h-[360px] hover:border hover:border-[#00712D] hover:shadow-sm  group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
+                        <div key={index} className="relative md:w-full md:h-[360px]  hover:shadow-md   group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
                             <div className='group'>
                                 <Link to='/products'>
                                     <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
@@ -121,12 +121,12 @@ function Products() {
                         </div>
                     ))}
                 </div>
-                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6">
+                <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6  ">
                     {productss.map((product, index) => (
-                        <div key={index} className="relative md:w-full md:h-[360px] hover:border-[#00712D] hover:shadow-sm  group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
-                            <div className='group'>
+                        <div key={index} className="relative md:w-full md:h-[360px]   hover:shadow-md  group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
+                            <div className='group '>
                                 <Link to='/doodle'>
-                                    <div className='relative w-[100%] flex justify-center items-center pt-[20px] z-10'>
+                                    <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                         <img
                                             src={product.imageSrc}
                                             alt={product.title}
