@@ -30,6 +30,11 @@ function Login() {
 
 
 
+    
+
+
+
+
     return (
         <section className='md:mt-0 mt-36 my-20  px-2   flex justify-center items-center '>
             <div className='lg:max-w-[30rem]   mx-auto max-h-[40rem] border  '>

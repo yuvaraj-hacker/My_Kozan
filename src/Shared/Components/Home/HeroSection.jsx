@@ -6,12 +6,12 @@ function HeroSection() {
             <section className="mx-auto max-w-[70rem] px-5 my-10">
                 <div className="grid lg:grid-cols-2 grid-cols-1  text-white lg:gap-0 gap-2  lg:p-4 p-2 rounded-xl bg-[#E38734] md:mt-0 mt-36">
                     <div className="flex justify-center items-center">
-                        <div className='md:block hidden'>
-                            <span className="md:text-5xl ">
+                        <div className='md:block hidden '>
+                            <span className="md:text-5xl  ">
                                 Boost Your <br />
                                 Store's Success <br />
                             </span>
-                            <span className="md:text-3xl  font-semibold">
+                            <span className="md:text-3xl  font-semibold ">
                                 with our handpicked, <br />{" "}
                             </span>
                             <span className="md:text-3xl  font-bold">High Profit Products !</span>

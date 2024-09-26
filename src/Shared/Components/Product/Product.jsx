@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Product/Product.css'
 import toast from 'react-hot-toast';
+import useCartStore from '../../Services/Store/UseCart';
 function Products() {
     const [cart, setCart] = useState([]);
     const toggleMenu = () => {
@@ -10,17 +11,17 @@ function Products() {
         }
         setOpen(!isOpen);
     };
+
+    const { addToCart } = useCartStore();
+
     const handleAddToCart = (product) => {
-        const isProductInCart = cart.find(cartItem => cartItem.imageSrc === product.imageSrc);
-        if (isProductInCart) {
-            toast.success('Already added to Cart');
-        } else {
-            setCart([...cart, product]);
-            toast.success('Added To Cart Successfully');
-        }
+        addToCart(product);
+        toast.success('Already added to Cart');
+
     };
     const products = [
         {
+            _id: 1,
             imageSrc: "/assets/Images/Products/product-1.png",
             title: "Reusable Wooden Money Box",
             price: "$5.99",
@@ -28,9 +29,10 @@ function Products() {
             buttonText: "Buy Now",
             image: "/assets/Images/Products/Add Shopping Cart.png",
         },
+    
     ];
     const productss = [
-        {
+        {      _id:2,
             imageSrc: "/assets/Images/Products/product4.png",
             title: "Doodle Board",
             price: "$5.99",
@@ -38,6 +40,7 @@ function Products() {
             buttonText: "Buy Now",
             image: "/assets/Images/Products/Add Shopping Cart.png",
         },
+      
     ];
     return (
         <>

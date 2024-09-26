@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import { Link, useLocation } from "react-router-dom";
 import ProductLists from "../../Shared/Components/Products/ProductLists";
+import useCartStore from "../../Shared/Services/Store/UseCart";
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
   const [isSearchActive, setSearchActive] = useState(false);
@@ -11,6 +12,9 @@ export default function Header() {
     }
     setOpen(!isOpen);
   };
+  const {cart} = useCartStore();
+
+
   const handleSearchFocus = () => {
     setSearchActive(true); 
   };
@@ -53,13 +57,15 @@ export default function Header() {
                   title="shop"
                 />
               </Link>
-              <Link to="/cart">
-                <img
+              <Link to="/cart" >
+                <img   
                   className="cursor-pointer h-7 opacity-85"
                   src="/assets/Images/Header/Shopping Cart (1).png"
                   alt="cart"
                    title="Cart"
                 />
+
+              {cart.length} 
               </Link>
               <Link to='/login'>
                 <div className="relative">
