@@ -7,7 +7,7 @@ function Sign() {
   const [showPass, setPass] = useState(false)
   return (
     <>
-      <section className='lg:h-[calc(100vh-300px)] my-20  px-2   flex justify-center items-center '>
+      <section className=' md:mt-0 mt-36  my-20  px-2   flex justify-center items-center '>
         <div className='lg:max-w-[30rem]   mx-auto max-h-[40rem] border  '>
           <div className='flex  justify-center items-center gap-2  bg-[#00712D]' >
             <h1 className=' text-white lg:text-xl text-lg  text-center py-4 font-bold' >SignUp </h1>

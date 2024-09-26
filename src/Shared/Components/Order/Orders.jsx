@@ -4,7 +4,7 @@ function Orders() {
         <>
             <section className='lg:h-[calc(100vh-300px)] max-w-[70rem] my-20  px-2 mx-auto  flex justify-center items-center '>
                 <div className='  w-full flex flex-col gap-5'>
-                    <div className='border '>
+                  <div className='border '>
                         <div className='flex gap-4 w-full bg-[#00712D] py-4 px-3 '>
                             <div className='text-[#00712D] py-2 px-4 text-xl bg-white font-bold rounded-lg '>
                                 1
