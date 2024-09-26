@@ -65,7 +65,7 @@ export default function Header() {
                 <div className="relative">
                   <img
                     className="cursor-pointer h-7 opacity-85"
-                    src="/assets/Images/Header/User.png"
+                    src="/assets/Images/Header/Male User (1).png"
                     alt="login"
                     title="login"
                   />

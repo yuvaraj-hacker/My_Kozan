@@ -50,6 +50,28 @@ const productDetails = [
       { key: "Function", value: "Money Storage" },
     ],
   },
+  {
+    image: "/assets/Images/Products/product6.png",
+    rating: "4.7",
+    reviews: "1,500 Ratings & 100 Reviews",
+    price: "$8.99",
+    specifications: [
+      { key: "Sales Package", value: "Pack of 1 Wooden Box" },
+      { key: "Pack of", value: "2" },
+    ],
+    general: [
+      { key: "Material", value: "Wood and Metal" },
+      { key: "Shape", value: "Rectangular Box" },
+      { key: "Place of Origin", value: "India" },
+      { key: "Brand Name", value: "No" },
+      { key: "Modal Number", value: "Model123" },
+      { key: "Design", value: "Handcrafted Designs" },
+      { key: "MOQ", value: "30 Pcs" },
+      { key: "Product name", value: "Reusable Wooden Money Box with Counter" },
+      { key: "Usage", value: "Coin and Note Saving Box" },
+      { key: "Function", value: "Money Storage" },
+    ],
+  },
 ];
 function Doodle() {
   const [currentProductImage, setCurrentProductImage] = useState(productDetails[0].image);
@@ -79,11 +101,11 @@ function Doodle() {
   return (
     <section className='mx-auto max-w-[70rem] px-5 my-10'>
       <div className="grid lg:grid-cols-10 grid-cols-5 lg:gap-10 gap-4">
-        <div className='col-span-1  flex flex-col gap-3'>
+        <div className='col-span-1  flex flex-col gap-3 '>
           {productDetails.map((product, index) => (
             <img
               key={index}
-              className='w-full cursor-pointer'
+              className='w-full cursor-pointer hover:scale-105 duration-200 hover:border h-[65px] hover:border-black'
               src={product.image}
               alt={`product-${index + 1}`}
               onClick={() => handleImageClick(index)}
@@ -99,7 +121,7 @@ function Doodle() {
               backgroundImage: `url(${currentProductImage})`,
               backgroundSize: zoom.backgroundSize,
               backgroundPosition: zoom.backgroundPosition,
-              backgroundRepeat:'no-repeat'
+              backgroundRepeat: 'no-repeat'
             }}
           >
             <img

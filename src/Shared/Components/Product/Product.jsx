@@ -86,7 +86,7 @@ function Products() {
                                             onClick={() => handleAddToCart(product)}
                                             src={product.image}
                                             alt="Add to cart"
-                                            className=" hover:scale-105 duration-200  w-8 h-8   transition mt-5"
+                                            className=" hover:scale-105 duration-200  w-8 h-8 cursor-pointer  transition mt-5"
                                         />
 
 
@@ -131,7 +131,7 @@ function Products() {
                                             onClick={() => handleAddToCart(product)}
                                             src={product.image}
                                             alt="Add to cart"
-                                            className=" hover:scale-105 duration-200  w-8 h-8   transition mt-5"
+                                            className=" hover:scale-105 duration-200  w-8 h-8  cursor-pointer   transition mt-5"
                                         />
                                     </div>
                                 </div>
