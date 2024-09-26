@@ -28,7 +28,6 @@ function Products() {
             buttonText: "Buy Now",
             image: "/assets/Images/Products/Add Shopping Cart.png",
         },
-
     ];
     const productss = [
         {
@@ -39,31 +38,26 @@ function Products() {
             buttonText: "Buy Now",
             image: "/assets/Images/Products/Add Shopping Cart.png",
         },
-
     ];
     return (
         <>
-            <section className="my-10 max-w-[68rem] mx-auto">
+            <section className="my-10 max-w-[68rem] mx-auto md:mt-0  mt-36">
                 <h1 className="text-center md:text-2xl text-xl border bg-[#00712D] w-fit mx-auto text-white p-2 rounded-lg">
                     Products
                 </h1>
                 <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6'>
-
-
                     <div className=" ">
                         {products.map((product, index) => (
                             <div key={index} className="relative md:w-full md:h-[360px]   hover:shadow-md   group-hover:bg-neutral-950 border rounded-lg overflow-hidden">
-
                                 <div className='group '>
                                     <Link to='/products' >
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare md:group-hover:max-w-[50%]"
+                                                className="max-w-[100%] rare md:group-hover:max-w-[50%] "
                                             />
                                         </div>
-
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default' >
                                             <h2 className="text-center md:text-lg font-semibold mb-2">
                                                 {product.title}
@@ -88,11 +82,8 @@ function Products() {
                                             alt="Add to cart"
                                             className=" hover:scale-105 duration-200  w-8 h-8 cursor-pointer  transition mt-5"
                                         />
-
-
                                     </div>
                                 </div>
-
                             </div>
                         ))}
                     </div>
@@ -108,7 +99,6 @@ function Products() {
                                                 className="max-w-[100%] rare md:group-hover:max-w-[50%] "
                                             />
                                         </div>
-
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
                                             <h2 className="text-center md:text-lg font-semibold mb-2">
                                                 {product.title}

@@ -5,6 +5,36 @@ import { IoMdEyeOff } from "react-icons/io";
 function Sign() {
   const [showPassword, setShowPassword] = useState(false)
   const [showPass, setPass] = useState(false)
+
+
+
+
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    name: "",
+    confirmPassword: "",
+  });
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  console.log("data login", data)
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
+
+
+
   return (
     <>
       <section className=' md:mt-0 mt-36  my-20  px-2   flex justify-center items-center '>
@@ -12,20 +42,20 @@ function Sign() {
           <div className='flex  justify-center items-center gap-2  bg-[#00712D]' >
             <h1 className=' text-white lg:text-xl text-lg  text-center py-4 font-bold' >SignUp </h1>
           </div>
-          <div className='p-6'>
+          <div className='p-6' >
             <div className='space-y-6'>
               <div>
                 <p className="lg:text-lg text-md text-gray-400 ">Name</p>
-                <input type="text" required className=' border-b-2 w-full  border-gray-200 outline-none' />
+                <input type="text" required className=' border-b-2 w-full  border-gray-200 outline-none' name='name' value={data.name} onChange={handleOnChange} />
               </div>
               <div>
                 <p className="lg:text-lg text-md text-gray-400 ">Email</p>
-                <input type="text" required className=' border-b-2 w-full  border-gray-200 outline-none' />
+                <input type="text" required className=' border-b-2 w-full  border-gray-200 outline-none' name='email' value={data.email} onChange={handleOnChange} />
               </div>
               <div>
                 <p className="lg:text-lg text-md text-gray-400 ">Password</p>
                 <div className='flex  '>
-                  <input type={showPassword ? "text" : "password"} required className=' border-b-2 w-full  border-gray-200 outline-none' />
+                  <input type={showPassword ? "text" : "password"} required className=' border-b-2 w-full  border-gray-200 outline-none' name='password' value={data.password} onChange={handleOnChange} />
                   <div className='cursor-pointer' onClick={() => setShowPassword((preve) => !preve)}>
                     <span className='text-xl'>
                       {
@@ -43,7 +73,7 @@ function Sign() {
               <div>
                 <p className="lg:text-lg text-md text-gray-400 "> Confirm Password</p>
                 <div className='flex  '>
-                  <input type={showPass ? "text" : "password"} required className=' border-b-2 w-full  border-gray-200 outline-none' />
+                  <input type={showPass ? "text" : "password"} required className=' border-b-2 w-full  border-gray-200 outline-none' name='confirmPassword' value={data.confirmPassword} onChange={handleOnChange} />
                   <div className='cursor-pointer' onClick={() => setPass((preve) => !preve)}>
                     <span className='text-xl'>
                       {
@@ -63,12 +93,12 @@ function Sign() {
                 <span className='text-[#00712D]'>   Privacy Policy </span></p>
             </div>
             <div className='text-center mt-10'>
-              <button className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200  lg:text-xl text-lg  text-white rounded-lg'>
+              <button type='submit' className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200  lg:text-xl text-lg  text-white rounded-lg' onSubmit={handleSubmit}>
                 SignUp
               </button>
             </div>
             <div className=' flex flex-wrap  justify-center items-center mt-5'>
-              <p className='text-center md:text-base text-sm '>Already Have an Account ? 
+              <p className='text-center md:text-base text-sm '>Already Have an Account ?
               </p>
               <Link to='/login'>
                 <span className='font-semibold  cursor-pointer'> <div className='flex justify-center items-center'>

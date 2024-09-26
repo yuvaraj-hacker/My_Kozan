@@ -29,13 +29,12 @@ function HeroSection() {
                                     Store's Success </span>  <span className='text-lg  font-semibold'>
                                     with our handpicked, </span>  <span className='text-lg  font-bold' > High Profit Products ! </span>
                             </p>
-
                         </div>
                     </div>
                     <div className="flex flex-col">
                         <div className='grid grid-cols-3 lg:gap-0 gap-3'>
                             <div className='flex justify-center '>
-                                <div className='lg:space-y-10  space-y-3'>
+                                <div className='space-y-10'>
                                     <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image1.png" alt="" />
                                     <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image4.png" alt="" />
                                 </div>
@@ -44,7 +43,7 @@ function HeroSection() {
                                 <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image2.png" alt="" />
                             </div>
                             <div className='flex justify-center'>
-                                <div className='lg:space-y-10 space-y-3 '>
+                                <div className='space-y-10  '>
                                     <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image3.png" alt="" />
                                     <img className='transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]' src="/assets/Images/HeroSection/image5.png" alt="" />
                                 </div>

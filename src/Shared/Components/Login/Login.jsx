@@ -4,22 +4,48 @@ import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 function Login() {
     const [showPassword, setShowPassword] = useState(false)
+
+
+    const [data, setData] = useState({
+        email: "",
+        password: ""
+    });
+
+    const handleOnChange = (e) => {
+        const { name, value } = e.target;
+
+        setData((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    console.log("data login", data)
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
+
+
+
     return (
         <section className='md:mt-0 mt-36 my-20  px-2   flex justify-center items-center '>
             <div className='lg:max-w-[30rem]   mx-auto max-h-[40rem] border  '>
                 <div className='flex  justify-center items-center gap-2  bg-[#00712D]' >
                     <h1 className=' text-white lg:text-xl text-lg  text-center py-4 font-bold' >Login </h1>
                 </div>
-                <div className='md:p-6 p-2 md:my-0 my-4'>
+                <form className='md:p-6 p-2 md:my-0 my-4' >
                     <div className='space-y-6'>
                         <div>
                             <p className="lg:text-lg text-md text-gray-400 ">Enter Email/ Mobile Number</p>
-                            <input type="text" required className=' border-b-2 w-full mt-2  border-gray-200 outline-none' />
+                            <input type="text" required name='email' value={data.email} onChange={handleOnChange} className=' border-b-2 w-full mt-2  border-gray-200 outline-none' />
                         </div>
                         <div>
                             <p className="lg:text-lg text-md text-gray-400 ">Password</p>
                             <div className='flex  '>
-                                <input type={showPassword ? "text" : "password"} required className=' border-b-2 w-full  border-gray-200 outline-none' />
+                                <input type={showPassword ? "text" : "password"} name='password' value={data.password} onChange={handleOnChange} required className=' border-b-2 w-full  border-gray-200 outline-none' />
                                 <div className='cursor-pointer' onClick={() => setShowPassword((preve) => !preve)}>
                                     <span className='text-xl'>
                                         {
@@ -42,7 +68,7 @@ function Login() {
                             <span className='text-[#00712D]'>   Privacy Policy </span></p>
                     </div>
                     <div className='text-center mt-10'>
-                        <button className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200  lg:text-xl text-lg  text-white rounded-lg'>
+                        <button className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200  lg:text-xl text-lg  text-white rounded-lg' onSubmit={handleSubmit}>
                             Sign In
                         </button>
                     </div>
@@ -54,7 +80,7 @@ function Login() {
                                 <img className='md:w-12 md:h-12 w-9 h-9 -hue-rotate-60' src="/assets/Images/sign/nnn.gif" alt="" />
                                 <p className=" md:text-base text-sm"> Create an Account</p> </div></span> </Link>
                     </div>
-                </div>
+                </form>
             </div>
         </section >
     )
