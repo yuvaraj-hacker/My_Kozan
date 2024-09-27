@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 const ProductLists = () => {
   const [visible, setVisible] = useState(true);
   useEffect(() => {
@@ -15,7 +16,7 @@ const ProductLists = () => {
           Sign in
         </button>
         <p className="text-black text-sm mt-2">
-          New customer? <a href="#" className="text-white ">Start here.</a>
+          New customer? <Link to='/signin' className="text-white ">Start here.</Link>
         </p>
       </div>
     )

@@ -12,14 +12,14 @@ export default function Header() {
     }
     setOpen(!isOpen);
   };
-  const {cart} = useCartStore();
+  const { cart } = useCartStore();
 
 
   const handleSearchFocus = () => {
-    setSearchActive(true); 
+    setSearchActive(true);
   };
   const handleSearchBlur = () => {
-    setSearchActive(false); 
+    setSearchActive(false);
   };
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
@@ -39,9 +39,9 @@ export default function Header() {
               <input
                 placeholder="Search"
                 className="w-full rounded-md px-2 py-1 border focus:outline-[#E38734]"
-                onFocus={handleSearchFocus}  
-                onBlur={handleSearchBlur}    
-               />
+                onFocus={handleSearchFocus}
+                onBlur={handleSearchBlur}
+              />
               <img
                 src="/assets/Images/Header/Search.png"
                 alt="search icon"
@@ -49,7 +49,7 @@ export default function Header() {
               />
             </div>
             <div className="md:flex gap-5 hidden">
-            <Link to="/product">
+              <Link to="/product">
                 <img
                   className="cursor-pointer h-7 opacity-85"
                   src="/assets/Images/Header/Shop.png"
@@ -58,20 +58,27 @@ export default function Header() {
                 />
               </Link>
               <Link to="/cart" >
-                <img   
-                  className="cursor-pointer h-7 opacity-85"
-                  src="/assets/Images/Header/Shopping Cart (1).png"
-                  alt="cart"
-                   title="Cart"
-                />
+                <div className="flex">
 
-              {cart.length} 
+
+
+                  <div className="relative  left-5 bottom-3 h-1 w-1 rounded-full ">
+                    {cart.length}
+                  </div>
+                  <img
+                    className="cursor-pointer h-7 opacity-85"
+                    src="/assets/Images/Header/Shopping Cart (1).png"
+                    alt="cart"
+                    title="Cart"
+                  />
+                </div>
+
               </Link>
               <Link to='/login'>
                 <div className="relative">
                   <img
                     className="cursor-pointer h-7 opacity-85"
-                    src="/assets/Images/Header/Male User (1).png"
+                    src="/assets/Images/Header/Login.png"
                     alt="login"
                     title="login"
                   />
@@ -105,7 +112,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </header>
+      </header >
       <div
         className={`fixed top-0 right-0 h-full bg-white shadow-lg w-[260px] transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"} z-50`}
       >
@@ -145,18 +152,22 @@ export default function Header() {
           )}
         </div>
       </div>
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 z-40"
-          onClick={() => setOpen(false)}
-        ></div>
-      )}
-      {isSearchActive && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 z-40"
-          onClick={() => setSearchActive(false)} 
-        ></div>
-      )}
+      {
+        isOpen && (
+          <div
+            className="fixed inset-0 bg-black opacity-50 z-40"
+            onClick={() => setOpen(false)}
+          ></div>
+        )
+      }
+      {
+        isSearchActive && (
+          <div
+            className="fixed inset-0 bg-black opacity-50 z-40"
+            onClick={() => setSearchActive(false)}
+          ></div>
+        )
+      }
     </>
   );
 }
