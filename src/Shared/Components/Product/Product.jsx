@@ -63,7 +63,7 @@ function Products() {
     return (
     <>
             <ToastContainer />
-            <section className=" max-w-[68rem] h-[calc(100% _-_100px)]  mx-auto lg:my-14 my-32">
+            <section className=" max-w-[68rem] h-[calc(100% _-_100px)]  mx-auto lg:my-14   my-24 lg:mt-0 md:mt-36 mt-36">
                 <h1 className="text-center md:text-2xl text-xl border bg-[#00712D] w-fit mx-auto text-white p-2 rounded-lg">
                     Products
                 </h1>
