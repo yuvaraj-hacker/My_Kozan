@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+
+
 const productDetails = [
   {
     image: "/assets/Images/ProductPage/productview-6.png",
@@ -197,3 +199,6 @@ function ProductCard() {
   );
 }
 export default ProductCard;
+
+
+

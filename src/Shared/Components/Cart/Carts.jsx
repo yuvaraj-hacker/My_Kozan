@@ -7,7 +7,7 @@ import useCartStore from '../../Services/Store/UseCart';
 function Carts() {
     const { cart, addToCart, removeFromCart, decrementQuantity } = useCartStore();
     const navigate = useNavigate();
-    
+
     const handleRemoveFromCart = (product) => {
         removeFromCart(product._id);
     };
@@ -17,11 +17,11 @@ function Carts() {
     const handleDecrement = (product) => {
         decrementQuantity(product._id);
     };
-    
+
     const reusableProducts = cart.filter(product => product.title === "Reusable Wooden Money Box");
     const doodleProducts = cart.filter(product => product.title === "Doodle Board");
     const selfieStickProducts = cart.filter(product => product.title === "Selfie Stick");
-    
+
     const calculateTotal = (products) => {
         return products.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0).toFixed(2);
     };
