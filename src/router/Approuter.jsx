@@ -12,26 +12,33 @@ import SignUp from "../Components/SignUpPage/SignUp.jsx";
 import PrivacyPolicy from "../Components/Policy/PrivacyPolicy.jsx";
 import DoodleBoard from "../Components/DoodleBoard/DoodleBoard.jsx";
 import Forgot from "../Components/Forgot Password/Forgot.jsx";
+import { AuthProvider } from "../Shared/Components/authenticated/AuthProvider.jsx";
+import PrivateRoute from "../Shared/Components/authenticated/PrivateRoute.jsx";
+
+
 export default function Approuter() {
     return (
         <>
-            <BrowserRouter>
+        <BrowserRouter>
+            <AuthProvider>
                 <Routes>
+                    
                     <Route element={<Main />}  >
                         <Route path="/" element={<Home />} />
-                        <Route path="/products" element={<ProductCard />} />
-                        <Route path="/productpage" element={<ProductPage />} />
-                        <Route path="/wishlist" element={<Wishlist />} />
-                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/products" element={  <ProductCard /> }   />
+                        {/* <Route path="/productpage" element={<ProductPage />} /> */}
+                        <Route path="/wishlist" element={  <Wishlist />  } />
+                        <Route path="/cart" element={  <Cart />  } />
                         <Route path="/login" element={<Login/>} />
                         <Route path="/order" element={<Order />} />
-                        <Route path="/product" element={<Product />} />
+                        <Route path="/product" element={ <Product /> } />
                         <Route path="/signin" element={<SignUp />} />
                         <Route path="/privacy" element={<PrivacyPolicy />} />
                         <Route path="/doodle" element={<DoodleBoard />} />
                         <Route path="/forgot" element={<Forgot />} />
                     </Route >
                 </Routes>
+            </AuthProvider>
             </BrowserRouter>
         </>
     )
