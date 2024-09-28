@@ -39,7 +39,7 @@ function Footer() {
                 <div>
 
                   <NavLink to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
-                    <p>Home</p>
+                    <p className='hover:underline'>Home</p>
                   </NavLink>
                 </div>
                 <div>

@@ -53,7 +53,7 @@ function Carts() {
                     ) : (
                         <div className='grid lg:grid-cols-4 grid-cols-1 gap-5 justify-center items-center  '>
                             {reusableProducts.length > 0 && (
-                                <div className='col-span-4 my-2'>
+                                <div className='col-span-4 my-2 '>
                                     <h2 className="text-xl font-bold mb-4">Reusable Wooden Money Box</h2>
                                     <div className='flex flex-col gap-5'>
                                         {reusableProducts.map((item, index) => (
@@ -67,7 +67,7 @@ function Carts() {
 
                                                         <p className='text-[#E38734] md:text-base text-sm'>
                                                             <span className='md:text-xl text-lg  font-bold'>{item.price} </span>
-                                                               ( {item.minOrder})
+                                                            ( {item.minOrder})
                                                         </p>
                                                     </div>
                                                 </div>

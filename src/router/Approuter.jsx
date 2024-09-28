@@ -13,10 +13,12 @@ import PrivacyPolicy from "../Components/Policy/PrivacyPolicy.jsx";
 import DoodleBoard from "../Components/DoodleBoard/DoodleBoard.jsx";
 import Forgot from "../Components/Forgot Password/Forgot.jsx";
 import SelfieStick from "../Components/SelfieStick/SelfieStick.jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
 export default function Approuter() {
     return (
         <>
             <BrowserRouter>
+            <ScrollToTop />
                 <Routes>
                     <Route element={<Main />}  >
                         <Route path="/" element={<Home />} />
