@@ -46,8 +46,8 @@ export default function Header() {
                 className="absolute animate-pulse animate-infinite right-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
               />
             </div>
-            <div className="md:flex gap-5 hidden">
-              <Link to="/product">
+            <div className="md:flex gap-5 hidden" >
+              <Link to="/product" onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 <img
                   className="cursor-pointer h-7 opacity-85"
                   src="/assets/Images/Header/Shop.png"

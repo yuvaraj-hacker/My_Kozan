@@ -15,8 +15,8 @@ function Foot() {
                 <div className='flex justify-around  items-center mt-2  w-full'>
                     <Link to='/' onClick={toggleMenu}>
                         <div className='flex flex-col justify-center items-center '>
-                            <img className='h-7' src="/assets/Images/Footer/Home.png" alt="home" />
-                            <p className="text-sm ">Home</p>
+                            <img className='h-6' src="/assets/Images/Footer/Home.png" alt="home" />
+                            <p className="text-sm mt-1">Home</p>
                         </div>
                     </Link>
                     <Link to="/cart" onClick={toggleMenu}>
@@ -27,18 +27,18 @@ function Foot() {
                                 )}
                             </div>
                             <img
-                                className="cursor-pointer h-7 opacity-85"
+                                className="cursor-pointer h-6 opacity-85"
                                 src="/assets/Images/Header/Shopping Cart (1).png"
                                 alt="cart"
                                 title="Cart"
                             />
                         </div>
-                        <p className="text-sm ml-1">Cart</p>
+                        <p className="text-sm mt-1">Cart</p>
                     </Link>
                     <Link to='/login' onClick={toggleMenu}>
                         <div className="flex  flex-col justify-center items-center  ">
-                            <img className='h-7' src="/assets/Images/Header/User.png" alt="user" />
-                            <p className="text-sm ">Profile</p>
+                            <img className='h-6' src="/assets/Images/Header/User.png" alt="user" />
+                            <p className="text-sm mt-1">Profile</p>
                         </div>
                     </Link>
                 </div>
