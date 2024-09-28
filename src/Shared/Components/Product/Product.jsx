@@ -67,17 +67,17 @@ function Products() {
                 <h1 className="text-center md:text-2xl text-xl border bg-[#00712D] w-fit mx-auto text-white p-2 rounded-lg">
                     Products
                 </h1>
-                <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6  '>
+                <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6  '>
                     <div className="group ">
                         {products.map((product, index) => (
-                            <div key={index} className="relative md:w-full md:h-[360px]    hover:shadow-md    border rounded-lg overflow-hidden">
+                            <div key={index} className="relative md:w-full lg:h-[360px]    hover:shadow-md    border rounded-lg overflow-hidden">
                                 <div className=''>
                                     <Link to='/products' >
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare md:group-hover:max-w-[50%]"
+                                                className="max-w-[100%] rare lg:group-hover:max-w-[50%]"
                                             />
                                         </div>
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
@@ -92,7 +92,7 @@ function Products() {
                                             </p>
                                         </div>
                                     </Link>
-                                    <div className='flex justify-around items-center md:mb-0 mb-5'>
+                                    <div className='flex justify-around items-center lg:mb-0 mb-5'>
                                         <Link to='/order' onClick={toggleMenu}>
                                             <button className="bg-[#00712D] hover:scale-105 mt-4 md:text-base text-sm duration-200 text-white py-2 px-4 rounded-lg w-full transition">
                                                 {product.buttonText}
@@ -111,14 +111,14 @@ function Products() {
                     </div>
                     <div className="group ">
                         {productss.map((product, index) => (
-                            <div key={index} className="relative md:w-full  md:h-[360px]   hover:shadow-md   border rounded-lg overflow-hidden">
+                            <div key={index} className="relative md:w-full  lg:h-[360px]   hover:shadow-md   border rounded-lg overflow-hidden">
                                 <div className=' '>
                                     <Link to='/doodle' onClick={toggleMenu}>
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare md:group-hover:max-w-[50%] "
+                                                className="max-w-[100%] rare lg:group-hover:max-w-[50%] "
                                             />
                                         </div>
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
@@ -133,7 +133,7 @@ function Products() {
                                             </p>
                                         </div>
                                     </Link>
-                                    <div className='flex justify-around items-center md:mb-0 mb-5'>
+                                    <div className='flex justify-around items-center lg:mb-0 mb-5'>
                                         <Link to='/order' onClick={toggleMenu}>
                                             <button className="bg-[#00712D] mt-4 hover:scale-105 md:text-base text-sm  duration-200 text-white py-2 px-4 rounded-lg w-full transition">
                                                 {product.buttonText}
@@ -152,14 +152,14 @@ function Products() {
                     </div>
                     <div className="group ">
                         {product1.map((product, index) => (
-                            <div key={index} className="relative md:w-full lg:h-[360px] md:h-[360px]   hover:shadow-md   border rounded-lg overflow-hidden">
+                            <div key={index} className="relative md:w-full  lg:h-[360px]   hover:shadow-md   border rounded-lg overflow-hidden">
                                 <div className=' '>
                                     <Link to='/selfiestick' onClick={toggleMenu}>
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare md:group-hover:max-w-[50%] "
+                                                className="max-w-[100%] rare lg:group-hover:max-w-[50%] "
                                             />
                                         </div>
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
@@ -174,7 +174,7 @@ function Products() {
                                             </p>
                                         </div>
                                     </Link>
-                                    <div className='flex justify-around items-center md:mb-0 mb-5'>
+                                    <div className='flex justify-around items-center lg:mb-0 mb-5'>
                                         <Link to='/order' onClick={toggleMenu}>
                                             <button className="bg-[#00712D] mt-4 hover:scale-105 md:text-base text-sm  duration-200 text-white py-2 px-4 rounded-lg w-full transition">
                                                 {product.buttonText}
