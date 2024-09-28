@@ -19,6 +19,15 @@ export default function Header() {
   const handleSearchBlur = () => {
     setSearchActive(false);
   };
+
+
+  const handleSearchClick = () => {
+    setSearchActive(true);
+  };
+
+  const handleSearchClose = () => {
+    setSearchActive(false);
+  };
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
   return (
@@ -85,7 +94,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="col-span-1   justify-end items-end  hidden md:block ">
-              
+
               <Hamburger toggled={isOpen} toggle={toggleMenu} />
             </div>
           </div>
@@ -104,7 +113,8 @@ export default function Header() {
               <img
                 src="/assets/Images/Header/Search (1).png"
                 alt="search icon"
-                className="  w-7 h-7"
+                className="  w-7 h-7 cursor-pointer"
+                onClick={handleSearchClick} // Open search when clicked
               />
             </div>
           </div>
@@ -165,6 +175,23 @@ export default function Header() {
           ></div>
         )
       }
+       {isSearchActive && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center">
+          <div className="bg-white p-5 rounded-lg relative w-[80vw] max-w-lg">
+            <button
+              className="absolute top-2 right-2 text-gray-600"
+              onClick={handleSearchClose} // Close search modal
+            >
+              ✕
+            </button>
+            <input
+              type="text"
+              className="w-full p-2 border rounded-lg focus:outline-none"
+              placeholder="Search..."
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
