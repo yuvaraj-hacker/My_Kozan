@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <>
       <header className="w-full border-b-2 md:py-0  z-50 fixed top-0 bg-white shadow-sm border-b-gray-200">
-        <div className="  max-w-[70rem] px-5  mx-auto  ">
+        <div className="  max-w-[70rem] lg:px-5 px-3  mx-auto  ">
           <div className="flex  md:justify-between  items-center ">
             <Link to='/'>
               <img
