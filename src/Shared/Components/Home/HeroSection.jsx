@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function HeroSection() {
-    // Define isOpen state
+   
     const [isOpen, setOpen] = useState(false); 
 
     const toggleMenu = () => {
         if (!isOpen) {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
         }
-        setOpen(!isOpen); // Toggle the menu state
+        setOpen(!isOpen); 
     };
 
     return (

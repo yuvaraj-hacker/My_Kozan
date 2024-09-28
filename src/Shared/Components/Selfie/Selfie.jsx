@@ -99,7 +99,7 @@ function Doodle() {
     setZoom({ backgroundPosition: '0% 0%', backgroundSize: '100%' });
   };
   return (
-    <section className='mx-auto max-w-[70rem] px-5 my-10'>
+    <section className='mx-auto max-w-[70rem] px-5 my-10 lg:mt-0 mt-28'>
       <div className="grid lg:grid-cols-10 grid-cols-5 lg:gap-10 gap-4">
         <div className='col-span-1  flex flex-col gap-3 '>
           {productDetails.map((product, index) => (
@@ -114,7 +114,7 @@ function Doodle() {
         </div>
         <div className='col-span-4   flex flex-col'>
           <div
-            className='relative overflow-hidden w-full  lg:h-[370px] md:h-[500px] h-[370px]  '
+            className='relative overflow-hidden w-full  lg:h-[370px] md:h-[500px] h-[300px]   '
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{
@@ -133,10 +133,10 @@ function Doodle() {
           </div>
           <div className='flex justify-between px-4 mt-4'>
           <button
-              className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 md:bg-[#E38734] bg-[#00712D] '
+              className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734] '
               onClick={handleAddToCart} 
             >
-              <span className=''><img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span><span className='md:block hidden'>Add to Cart</span> 
+              <span className=''><img className='md:block hidden' src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span><span className=''>Add to Cart</span> 
             </button>
             <Link to='/order'>
               <button className='border py-2 px-3  rounded-lg hover:scale-105 duration-200 text-white bg-[#00712D]'>

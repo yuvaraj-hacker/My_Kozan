@@ -18,7 +18,7 @@ function Products() {
 
                                     </div>
                                     <div>
-                                        <p className="text-white lg:text-base text-sm mb-4"  >
+                                        <p className="text-white lg:text-base text-[11px] mb-4"  >
                                             <span className='md:text-lg text-base font-bold'>$5.99</span> (Min. 50 Pcs)
                                         </p>
 
@@ -55,7 +55,7 @@ function Products() {
                                     <div>
 
 
-                                        <p className=" lg:text-base text-sm mb-4"> <span className='md:text-lg text-base  font-bold ' >$8.99 </span>
+                                        <p className=" lg:text-base text-[11px] mb-4"> <span className='md:text-lg text-base  font-bold ' >$8.99 </span>
                                             (Min. 50 Pcs)</p>
                                         <Link to='/product' >
                                             <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl  text-sm  font-semibold text-black  hover:scale-105 duration-200 '>Buy Now</button>
@@ -75,7 +75,7 @@ function Products() {
 
 
                                     <div>
-                                        <p className="text-white  lg:text-base text-sm mb-4"> <span className='md:text-lg text-base font-bold' >$5.99 </span>
+                                        <p className="text-white  lg:text-base text-[11px] mb-4"> <span className='md:text-lg text-base font-bold' >$5.99 </span>
                                             (Min. 50 Pcs)</p>
 
                                         <Link to='/product' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
