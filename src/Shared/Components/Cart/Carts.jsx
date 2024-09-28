@@ -40,7 +40,7 @@ function Carts() {
         <>
             <ToastContainer />
             <div className='px-5 h-auto'>
-                <section className="mx-auto max-w-[66rem] py-10 md:px-10 px-3 border rounded-md my-20">
+                <section className="mx-auto max-w-[66rem] lg:py-10 py-5 md:px-10 px-3 border rounded-md my-10 lg:mt-0 mt-28">
                     {cart.length === 0 ? (
                         <div className='h-[50vh]'>
 
@@ -51,9 +51,10 @@ function Carts() {
                             </div>
                         </div>
                     ) : (
+                        
                         <div className='grid lg:grid-cols-4 grid-cols-1 gap-5 justify-center items-center  '>
                             {reusableProducts.length > 0 && (
-                                <div className='col-span-4 my-2 '>
+                                <div className='col-span-4 my-2 ' >
                                     <h2 className="text-xl font-bold mb-4">Reusable Wooden Money Box</h2>
                                     <div className='flex flex-col gap-5'>
                                         {reusableProducts.map((item, index) => (
@@ -91,7 +92,9 @@ function Carts() {
                                         ))}
                                     </div>
                                 </div>
+                                
                             )}
+                            
                             {doodleProducts.length > 0 && (
                                 <div className='col-span-4 my-2'>
                                     <h2 className="text-xl font-bold mb-4">Doodle Board</h2>

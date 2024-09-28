@@ -18,7 +18,7 @@ export default function Approuter() {
     return (
         <>
             <BrowserRouter>
-            <ScrollToTop />
+                <ScrollToTop />
                 <Routes>
                     <Route element={<Main />}  >
                         <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ export default function Approuter() {
                         <Route path="/productpage" element={<ProductPage />} />
                         <Route path="/wishlist" element={<Wishlist />} />
                         <Route path="/cart" element={<Cart />} />
-                        <Route path="/login" element={<Login/>} />
+                        <Route path="/login" element={<Login />} />
                         <Route path="/order" element={<Order />} />
                         <Route path="/product" element={<Product />} />
                         <Route path="/signin" element={<SignUp />} />
