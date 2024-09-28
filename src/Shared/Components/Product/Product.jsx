@@ -7,12 +7,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import useCartStore from '../../Services/Store/UseCart';
 function Products() {
     const [cart, setCart] = useState([]);
+    // Define isOpen state
+    const [isOpen, setOpen] = useState(false); 
+
     const toggleMenu = () => {
         if (!isOpen) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
         }
-        setOpen(!isOpen);
+        setOpen(!isOpen); // Toggle the menu state
     };
+
     const { addToCart } = useCartStore();
     const handleAddToCart = (product) => {
         addToCart(product);

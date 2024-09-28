@@ -1,6 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 function HeroSection() {
+    // Define isOpen state
+    const [isOpen, setOpen] = useState(false); 
+
+    const toggleMenu = () => {
+        if (!isOpen) {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+        }
+        setOpen(!isOpen); // Toggle the menu state
+    };
+
     return (
         <>
             <section className="mx-auto md:max-w-[70rem] w-full md:px-5 lg:my-10 md:my-2 ">
@@ -12,12 +23,12 @@ function HeroSection() {
                                 Store's Success <br />
                             </span>
                             <span className="md:text-3xl  font-semibold ">
-                                with our handpicked, <br />{" "}
+                                with our handpicked, <br />
                             </span>
                             <span className="md:text-3xl  font-bold">High Profit Products !</span>
                             <div className=' lg:mt-0  mt-4'>
-                                <Link to='/product'>
-                                    <button className='bg-black text-white font-semibold   lg:px-4 lg:py-3   p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
+                                <Link to='/product' onClick={toggleMenu}>
+                                    <button className='bg-black text-white font-semibold lg:px-4 lg:py-3 p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
                                         Shop Now
                                     </button>
                                 </Link>
@@ -25,9 +36,11 @@ function HeroSection() {
                         </div>
                         <div className='md:hidden block text-center'>
                             <p className="text-2xl ">
-                                <span>Boost Your
-                                    Store's Success </span>  <span className='text-lg  font-semibold'>
-                                    with our handpicked, <br/></span>  <span className='text-lg  font-bold' > High Profit Products ! </span>
+                                <span>Boost Your Store's Success </span>
+                                <span className='text-lg font-semibold'>
+                                    with our handpicked, <br />
+                                </span>
+                                <span className='text-lg font-bold'> High Profit Products ! </span>
                             </p>
                         </div>
                     </div>
@@ -51,16 +64,16 @@ function HeroSection() {
                         </div>
                     </div>
                     <div className=' lg:mt-0  mt-4 md:hidden block text-center'>
-                    <Link to='/product'>
-                        <button className='bg-[#00712D] text-white font-semibold   lg:px-4 lg:py-3   p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
-                            Shop Now
-                        </button>
-                    </Link>
+                        <Link to='/product' onClick={toggleMenu}>
+                            <button className='bg-[#00712D] text-white font-semibold lg:px-4 lg:py-3 p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
+                                Shop Now
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-                </div>
-                
             </section>
         </>
-    )
+    );
 }
-export default HeroSection
+
+export default HeroSection;
