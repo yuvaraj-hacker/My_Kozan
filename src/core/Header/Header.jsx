@@ -6,6 +6,7 @@ import useCartStore from "../../Shared/Services/Store/UseCart";
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
   const [isSearchActive, setSearchActive] = useState(false);
+  const [isSearchActiv, setSearchActiv] = useState(false);
   const toggleMenu = () => {
     if (!isOpen) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -14,10 +15,10 @@ export default function Header() {
   };
   const { cart } = useCartStore();
   const handleSearchFocus = () => {
-    setSearchActive(true);
+    setSearchActiv(true);
   };
   const handleSearchBlur = () => {
-    setSearchActive(false);
+    setSearchActiv(false);
   };
 
 
