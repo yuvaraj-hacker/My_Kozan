@@ -22,11 +22,12 @@ function Products() {
                                             <span className='md:text-lg text-base font-bold'>$5.99</span> (Min. 50 Pcs)
                                         </p>
 
-                                        <Link to='/product'>
+                                        <Link to='/product' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                                             <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl text-sm font-semibold hover:scale-105 duration-200'>
                                                 Buy Now
                                             </button>
                                         </Link>
+
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +57,7 @@ function Products() {
 
                                         <p className=" lg:text-base text-sm mb-4"> <span className='md:text-lg text-base  font-bold ' >$8.99 </span>
                                             (Min. 50 Pcs)</p>
-                                        <Link to='/product'>
+                                        <Link to='/product' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                                             <button className='bg-[#E38734] px-5 py-2 rounded-lg lg:text-xl  text-sm  font-semibold text-black  hover:scale-105 duration-200 '>Buy Now</button>
                                         </Link>
                                     </div>
@@ -77,7 +78,7 @@ function Products() {
                                         <p className="text-white  lg:text-base text-sm mb-4"> <span className='md:text-lg text-base font-bold' >$5.99 </span>
                                             (Min. 50 Pcs)</p>
 
-                                        <Link to='/product'>
+                                        <Link to='/product' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                                             <button className='bg-[#E38734] md:px-5 px-5 py-2 rounded-lg lg:text-xl  font-semibold text-sm hover:scale-105 duration-200'>Buy Now</button>
                                         </Link>
                                     </div>

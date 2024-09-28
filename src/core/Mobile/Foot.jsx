@@ -20,18 +20,18 @@ function Foot() {
                         </div>
                     </Link>
                     <Link to="/cart" onClick={toggleMenu}>
-                        <div className="flex">
-                            <div className="relative  left-5 bottom-3 h-1 w-1 text-[#E38734] rounded-full ">
-                                {cart.length > 0 && (
-                                    <p> {cart.length}</p>
-                                )}
-                            </div>
+                        <div className="flex items-center relative">
                             <img
-                                className="cursor-pointer h-6 opacity-85"
+                                className="cursor-pointer h-7 opacity-85"
                                 src="/assets/Images/Header/Shopping Cart (1).png"
                                 alt="cart"
                                 title="Cart"
                             />
+                            {cart.length > 0 && (
+                                <div className="absolute -top-1 -right-1 flex items-center justify-center h-5 w-5 rounded-full bg-[#E38734]  text-white text-xs font-semibold">
+                                    {cart.length}
+                                </div>
+                            )}
                         </div>
                         <p className="text-sm mt-1">Cart</p>
                     </Link>
