@@ -37,23 +37,26 @@ function Footer() {
               <h1 className='text-2xl font-semibold'>Quick Links:</h1>
               <div className='text-lg space-y-2 mt-3'>
                 <div>
-                  <NavLink to='/aboutus' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
-                    <p>About Us</p>
+
+                  <NavLink to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
+                    <p>Home</p>
                   </NavLink>
                 </div>
                 <div>
+
                   <NavLink to='/product' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
                     <p>Products</p>
                   </NavLink>
                 </div>
-                <div>
-                  <NavLink to='/' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
-                    <p className='hover:underline'>Support</p>
-                  </NavLink>
-                </div>
+
                 <div>
                   <NavLink to='/cart' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
                     <p>Cart</p>
+                  </NavLink>
+                </div>
+                <div>
+                  <NavLink to='/login' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={({ isActive }) => isActive ? '' : 'hover:underline'}>
+                    <p className='hover:underline'>Login</p>
                   </NavLink>
                 </div>
               </div>

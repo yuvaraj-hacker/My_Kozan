@@ -13,8 +13,6 @@ export default function Header() {
     setOpen(!isOpen);
   };
   const { cart } = useCartStore();
-
-
   const handleSearchFocus = () => {
     setSearchActive(true);
   };
@@ -25,7 +23,7 @@ export default function Header() {
   const isActive = (path) => location.pathname === path;
   return (
     <>
-      <header className="w-full border-b-2 md:py-0 py-3 z-50 fixed top-0 bg-white shadow-sm border-b-gray-200">
+      <header className="w-full border-b-2 md:py-0  z-50 fixed top-0 bg-white shadow-sm border-b-gray-200">
         <div className="  max-w-[70rem] px-5  mx-auto  ">
           <div className="flex  md:justify-between  items-center ">
             <Link to='/'>
@@ -59,11 +57,10 @@ export default function Header() {
               </Link>
               <Link to="/cart" >
                 <div className="flex">
-
-
-
-                  <div className="relative  left-5 bottom-3 h-1 w-1 rounded-full ">
-                    {cart.length}
+                  <div className="relative  left-5 bottom-3 h-1 w-1 text-[#E38734] rounded-full ">
+                    {cart.length > 0 && (
+                      <p> {cart.length}</p>
+                    )}
                   </div>
                   <img
                     className="cursor-pointer h-7 opacity-85"
@@ -72,7 +69,6 @@ export default function Header() {
                     title="Cart"
                   />
                 </div>
-
               </Link>
               <Link to='/login'>
                 <div className="relative">
@@ -89,6 +85,7 @@ export default function Header() {
               </Link>
             </div>
             <div className="col-span-1   justify-end items-end  hidden md:block ">
+              
               <Hamburger toggled={isOpen} toggle={toggleMenu} />
             </div>
           </div>
@@ -107,7 +104,7 @@ export default function Header() {
               <img
                 src="/assets/Images/Header/Search (1).png"
                 alt="search icon"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 w-7 h-7"
+                className="  w-7 h-7"
               />
             </div>
           </div>
@@ -121,9 +118,9 @@ export default function Header() {
             <div className="2xl:hidden xl:block lg:block md:block hidden">
               <Hamburger toggled={isOpen} toggle={toggleMenu} />
             </div>
-            <h2 className="lg:text-2xl text-lg font-bold mb-4 lg:mt-0 mt-2 text-[#E38734]">Menu</h2>
+            <h2 className="lg:text-2xl text-lg font-bold mb-4 lg:mt-0 mt-2 ml-auto text-[#E38734]">Menu</h2>
           </div>
-          <div className="space-y-4 mt-5 text-right text-base font-semibold ">
+          <div className="space-y-4 mt-5 text-right md:text-lg  text-base  ">
             <div>
               <Link to="/" onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 <div className={`" ${isActive('/') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer hover:scale-105 duration-200'}`}>Home</div>

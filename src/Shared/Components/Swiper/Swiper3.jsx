@@ -31,10 +31,12 @@ function Swiper3() {
                     },
                     600: {
                         slidesPerView: 1,
+                        centeredSlides: true,
                         spaceBetween: 10,
                     },
                     1024: {
                         slidesPerView: 3,
+                    
                         spaceBetween: 30,
                     },
                 }}

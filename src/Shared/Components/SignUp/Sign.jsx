@@ -5,36 +5,23 @@ import { IoMdEyeOff } from "react-icons/io";
 function Sign() {
   const [showPassword, setShowPassword] = useState(false)
   const [showPass, setPass] = useState(false)
-
-
-
-
   const [data, setData] = useState({
     email: "",
     password: "",
     name: "",
     confirmPassword: "",
   });
-
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-
     setData((prev) => ({
       ...prev,
       [name]: value
     }));
   };
-
   console.log("data login", data)
-
-
   const handleSubmit = (e) => {
     e.preventDefault()
   }
-
-
-
-
   return (
     <>
       <section className=' md:mt-0 mt-36  my-20  px-2   flex justify-center items-center '>
@@ -60,10 +47,11 @@ function Sign() {
                     <span className='text-xl'>
                       {
                         showPassword ? (
-                          <IoEye />
+                          <IoMdEyeOff />
                         )
                           : (
-                            <IoMdEyeOff />
+                            <IoEye />
+                           
                           )
                       }
                     </span>
@@ -78,10 +66,11 @@ function Sign() {
                     <span className='text-xl'>
                       {
                         showPass ? (
-                          <IoEye />
+                          <IoMdEyeOff />
                         )
                           : (
-                            <IoMdEyeOff />
+                            <IoEye />
+                          
                           )
                       }
                     </span>
@@ -90,7 +79,9 @@ function Sign() {
               </div>
               <p className="lg:text-base text-md text-gray-400">By continuing, you agree to <span className='text-[#00712D]'>  My Kozan LLC</span> terms of Use
                 and
-                <span className='text-[#00712D]'>   Privacy Policy </span></p>
+                <Link to='/privacy'>
+               
+                <span className='text-[#00712D] hover:underline'>   Privacy Policy </span>  </Link></p>
             </div>
             <div className='text-center mt-10'>
               <button type='submit' className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200  lg:text-xl text-lg  text-white rounded-lg' onSubmit={handleSubmit}>

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 function HeroSection() {
     return (
         <>
-            <section className="mx-auto max-w-[70rem] px-5 my-10">
-                <div className="grid lg:grid-cols-2 grid-cols-1  text-white lg:gap-0 gap-2  lg:p-4 p-2 rounded-xl bg-[#E38734] md:mt-0 mt-36">
+            <section className="mx-auto md:max-w-[70rem] w-full md:px-5 lg:my-10 md:my-2 ">
+                <div className="grid lg:grid-cols-2 grid-cols-1 py-5 text-white lg:gap-0 gap-2  md:px-0 px-5  md:rounded-xl bg-[#E38734] md:mt-0 ">
                     <div className="flex justify-center items-center">
                         <div className='md:block hidden '>
                             <span className="md:text-5xl  ">
@@ -27,7 +27,7 @@ function HeroSection() {
                             <p className="text-2xl ">
                                 <span>Boost Your
                                     Store's Success </span>  <span className='text-lg  font-semibold'>
-                                    with our handpicked, </span>  <span className='text-lg  font-bold' > High Profit Products ! </span>
+                                    with our handpicked, <br/></span>  <span className='text-lg  font-bold' > High Profit Products ! </span>
                             </p>
                         </div>
                     </div>
@@ -50,14 +50,15 @@ function HeroSection() {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className=' lg:mt-0  mt-4 md:hidden block text-center'>
+                    <div className=' lg:mt-0  mt-4 md:hidden block text-center'>
                     <Link to='/product'>
                         <button className='bg-[#00712D] text-white font-semibold   lg:px-4 lg:py-3   p-2 lg:text-base text-sm rounded-lg lg:mt-10 hover:scale-105 duration-200'>
                             Shop Now
                         </button>
                     </Link>
                 </div>
+                </div>
+                
             </section>
         </>
     )

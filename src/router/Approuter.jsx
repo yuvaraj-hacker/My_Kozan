@@ -12,6 +12,7 @@ import SignUp from "../Components/SignUpPage/SignUp.jsx";
 import PrivacyPolicy from "../Components/Policy/PrivacyPolicy.jsx";
 import DoodleBoard from "../Components/DoodleBoard/DoodleBoard.jsx";
 import Forgot from "../Components/Forgot Password/Forgot.jsx";
+import SelfieStick from "../Components/SelfieStick/SelfieStick.jsx";
 export default function Approuter() {
     return (
         <>
@@ -30,6 +31,7 @@ export default function Approuter() {
                         <Route path="/privacy" element={<PrivacyPolicy />} />
                         <Route path="/doodle" element={<DoodleBoard />} />
                         <Route path="/forgot" element={<Forgot />} />
+                        <Route path="/selfiestick" element={<SelfieStick />} />
                     </Route >
                 </Routes>
             </BrowserRouter>

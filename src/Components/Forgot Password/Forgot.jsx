@@ -26,7 +26,8 @@ function Forgot() {
                     </div> */}
                     <div className=' w-full  h-fit mx-auto  border  rounded-lg  md:my-0 my-5'>
                         <div className='flex  justify-center items-center gap-2   ' >
-                            <h1 className='  lg:text-xl text-lg  text-center py-4 font-bold' >Forget Password </h1>
+                            <img className='w-9 h-9' src="/assets/Images/WishList/thinking.gif" alt="thinking" />
+                            <h1 className='  lg:text-xl text-lg  text-center py-4 font-bold mt-1' >Forget Password </h1>
                         </div>
                         <div className='p-2 space-y-7'>
                             <div>

@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 const productDetails = [
   {
-    image: "/assets/Images/Products/product4.png",
-    rating: "4.6",
+    image: "/assets/Images/Products/product7.png",
+    rating: "4.8",
     reviews: "2,264 Ratings & 195 Reviews",
     price: "$8.99",
     specifications: [
@@ -28,8 +29,8 @@ const productDetails = [
     ],
   },
   {
-    image: "/assets/Images/Products/product5.png",
-    rating: "4.7",
+    image: "/assets/Images/Products/product8.png",
+    rating: "4.8",
     reviews: "1,500 Ratings & 100 Reviews",
     price: "$8.99",
     specifications: [
@@ -50,8 +51,8 @@ const productDetails = [
     ],
   },
   {
-    image: "/assets/Images/Products/product6.png",
-    rating: "4.7",
+    image: "/assets/Images/Products/product9.png",
+    rating: "4.8",
     reviews: "1,500 Ratings & 100 Reviews",
     price: "$8.99",
     specifications: [
@@ -193,3 +194,4 @@ function Doodle() {
   );
 }
 export default Doodle;
+

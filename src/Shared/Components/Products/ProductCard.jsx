@@ -85,6 +85,13 @@ function ProductCard() {
       toast.success('Added To Cart Successfully');
     }
   };
+
+
+
+
+
+
+
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
@@ -130,7 +137,7 @@ function ProductCard() {
           <div className='flex justify-between px-4 mt-4'>
             <button
               className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734]'
-              onClick={handleAddToCart}
+              onClick={handleAddToCart} 
             >
               <span className=''><img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span> Add to Cart
             </button>

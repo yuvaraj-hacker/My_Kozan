@@ -8,6 +8,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [    require('preline/plugin'),   require('tailwindcss-animated')],
+  plugins: [    require('preline/plugin'),   require('tailwindcss-animated')  ,require('@tailwindcss/line-clamp')  ],
 }
 
