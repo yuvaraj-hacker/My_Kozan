@@ -132,10 +132,10 @@ function Doodle() {
           </div>
           <div className='flex justify-between px-4 mt-4'>
             <button
-              className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734]'
+              className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 md:bg-[#E38734] bg-[#00712D] '
               onClick={handleAddToCart}
             >
-              <span className=''><img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span> Add to Cart
+              <span className=''><img src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span><span className='md:block hidden'>Add to Cart</span>
             </button>
             <Link to='/order'>
               <button className='border py-2 px-3  rounded-lg hover:scale-105 duration-200 text-white bg-[#00712D]'>
