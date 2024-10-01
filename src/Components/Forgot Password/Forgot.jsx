@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import apiurl from '../../Shared/Services/api/apiendpoint';
 import toast from 'react-hot-toast';
+import { apisendotpforgotpassword, apiupdatepassword, apiverifyotpforgotpassword } from '../../Shared/Services/apiAuth/apiRegister';
 
 function Forgot() {
   const [showOtpInput, setShowOtpInput] = useState(false);
@@ -22,8 +21,8 @@ function Forgot() {
 
   const handleSendMail = async () => {
     try {
-      const response = await axios.post(`${apiurl()}/api/apisentotpforgotPassword`, { Email: data.email });
-      if (response.data.status === 'OTP Sent') {
+      const response = await apisendotpforgotpassword({ Email: data.email });
+      if (response.status === 'OTP Sent') {
         toast.success('OTP sent to your email!');
         setShowOtpInput(true);
       } else {
@@ -36,8 +35,8 @@ function Forgot() {
 
   const handleVerifyOtp = async () => {
     try {
-      const response = await axios.post(`${apiurl()}/api/apiverifyforgotPasswordotp`, { Email: data.email, OTP: data.otp });
-      if (response.data.status === 'Sucessfully otp verified') {
+      const response = await apiverifyotpforgotpassword({ Email: data.email, OTP: data.otp });
+      if (response.status === 'Sucessfully otp verified') {
         toast.success('OTP verified! Please set your new password.');
         setShowNewPasswordInput(true);
       } else {
@@ -50,8 +49,8 @@ function Forgot() {
 
   const handleResetPassword = async () => {
     try {
-      const response = await axios.put(`${apiurl()}/api/apiupdateforgotPassword`, { Email: data.email, Password: data.password });
-      if (response.data.status === 'Sucessfully Password changed') {
+      const response = await apiupdatepassword({ Email: data.email, Password: data.password });
+      if (response.status === 'Sucessfully Password changed') {
         toast.success('Password successfully changed!');
         navigate('/login');
       } else {
@@ -71,6 +70,7 @@ function Forgot() {
             <h1 className='lg:text-xl text-lg text-center py-4 font-bold'>Forgot Password</h1>
           </div>
           <div className='p-2 space-y-7'>
+          
             {!showOtpInput && !showNewPasswordInput && (
               <>
                 <input
@@ -82,25 +82,28 @@ function Forgot() {
                   name='email'
                   onChange={handleChange}
                 />
-                <button className='w-full bg-[#00712D] rounded-2xl p-3 hover:bg-green-700 text-white text-xl'
-                type='submit'
-                  onClick={handleSendMail}>
+                <button
+                  className='w-full bg-[#00712D] rounded-2xl p-3 hover:bg-green-700 text-white text-xl'
+                  type='submit'
+                  onClick={handleSendMail}
+                >
                   Send OTP
                 </button>
                 <div className='flex flex-wrap justify-center items-center mt-5'>
-              <p className='text-center md:text-base text-sm'>Already Have an Account ?</p>
-              <Link to='/login'>
-                <span className='font-semibold cursor-pointer'>
-                  <div className='flex justify-center items-center'>
-                    <img className='md:w-12 md:h-12 w-9 h-9 -hue-rotate-60' src='/assets/Images/sign/nnn.gif' alt='' />
-                    <p className='md:text-base text-sm'> Login</p>
-                  </div>
-                </span>
-              </Link>
-            </div>
+                  <p className='text-center md:text-base text-sm'>Already Have an Account ?</p>
+                  <Link to='/login'>
+                    <span className='font-semibold cursor-pointer'>
+                      <div className='flex justify-center items-center'>
+                        <img className='md:w-12 md:h-12 w-9 h-9 -hue-rotate-60' src='/assets/Images/sign/nnn.gif' alt='' />
+                        <p className='md:text-base text-sm'> Login</p>
+                      </div>
+                    </span>
+                  </Link>
+                </div>
               </>
             )}
 
+        
             {showOtpInput && !showNewPasswordInput && (
               <>
                 <input
@@ -112,13 +115,16 @@ function Forgot() {
                   name='otp'
                   onChange={handleChange}
                 />
-                <button className='w-full bg-[#00712D] rounded-2xl p-3 hover:bg-green-700 text-white text-xl'
-                  onClick={handleVerifyOtp}>
+                <button
+                  className='w-full bg-[#00712D] rounded-2xl p-3 hover:bg-green-700 text-white text-xl'
+                  onClick={handleVerifyOtp}
+                >
                   Verify OTP
                 </button>
               </>
             )}
 
+         
             {showNewPasswordInput && (
               <>
                 <input
@@ -130,8 +136,10 @@ function Forgot() {
                   name='password'
                   onChange={handleChange}
                 />
-                <button className='w-full bg-[#00712D] rounded-2xl p-3 hover:bg-green-700 text-white text-xl'
-                  onClick={handleResetPassword}>
+                <button
+                  className='w-full bg-[#00712D] rounded-2xl p-3 hover:bg-green-700 text-white text-xl'
+                  onClick={handleResetPassword}
+                >
                   Reset Password
                 </button>
               </>

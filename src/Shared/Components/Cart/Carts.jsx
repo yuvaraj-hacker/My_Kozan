@@ -23,7 +23,10 @@ function Carts() {
 
     // Calculate total for a specific set of products
     const calculateTotal = (products) => {
-        return products.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0).toFixed(2);
+        return products.reduce((total, item) => {
+            const price = item.price ? parseFloat(item.price.slice(1)) : 0; // Safely handle undefined prices
+            return total + price * item.quantity;
+        }, 0).toFixed(2);
     };
 
     return (
@@ -45,7 +48,7 @@ function Carts() {
                                             <div className="text-gray-400 w-full lg:w-auto lg:flex-grow">
                                                 <p>{item.title}</p>
                                                 <p className='text-[#E38734]'>
-                                                    <span className='text-xl font-bold'>{item.price}</span>
+                                                    <span className='text-xl font-bold'>{item.price || "$0.00"}</span>
                                                     (Min. {item.minOrder})
                                                 </p>
                                             </div>
@@ -79,7 +82,7 @@ function Carts() {
                             </Link>
                         </div>
 
-
+                        {/* Section for Doodle Board */}
                         {doodleProducts.length > 0 && (
                             <div className='col-span-3'>
                                 <h2 className="text-xl font-bold mb-4">Doodle Board</h2>
@@ -90,7 +93,7 @@ function Carts() {
                                             <div className="text-gray-400 w-full lg:w-auto lg:flex-grow">
                                                 <p>{item.title}</p>
                                                 <p className='text-[#E38734]'>
-                                                    <span className='text-xl font-bold'>{item.price}</span>
+                                                    <span className='text-xl font-bold'>{item.price || "$0.00"}</span>
                                                     (Min. {item.minOrder})
                                                 </p>
                                             </div>
@@ -123,7 +126,6 @@ function Carts() {
                             </Link>
                         </div>
 
-
                     </div>
                 )}
                 <div className='text-gray-400 mt-20 border p-5'>
@@ -132,7 +134,10 @@ function Carts() {
                         <p className="text-lg">
                             You Pay:
                             <span className='text-[#E38734]'>
-                                ${cart.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0).toFixed(2)}
+                                ${cart.reduce((total, item) => {
+                                    const price = item.price ? parseFloat(item.price.slice(1)) : 0;
+                                    return total + price * item.quantity;
+                                }, 0).toFixed(2)}
                             </span>
                         </p>
                         <p>(Including delivery and other charges. )</p>
