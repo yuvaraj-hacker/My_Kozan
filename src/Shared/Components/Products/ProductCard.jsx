@@ -119,7 +119,7 @@ function ProductCard() {
         </div>
         <div className='col-span-4   flex flex-col'>
           <div
-            className='relative overflow-hidden w-full  lg:h-[370px] md:h-[500px] h-[300px]   '
+            className='relative overflow-hidden w-full  lg:h-[370px] md:h-[500px] h-[300px]  cursor-zoom-in  '
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{

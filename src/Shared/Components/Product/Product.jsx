@@ -63,28 +63,28 @@ function Products() {
     return (
     <>
             <ToastContainer />
-            <section className=" max-w-[68rem]  mx-auto lg:my-96  my-12 lg:mt-0 md:mt-28 mt-28">
+            <section className=" max-w-[68rem]  mx-auto   my-12 lg:mt-0 md:mt-28 mt-28">
                 <h1 className="text-center md:text-2xl text-xl border bg-[#00712D] w-fit mx-auto text-white p-2 rounded-lg">
                     Products
                 </h1>
                 <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-4 mt-6  '>
                     <div className="group ">
                         {products.map((product, index) => (
-                            <div key={index} className="relative md:w-full lg:h-[360px]    hover:shadow-md    border rounded-lg overflow-hidden">
+                            <div key={index} className="relative md:w-full lg:h-[365px]    hover:shadow-md    border rounded-lg overflow-hidden">
                                 <div className=''>
                                     <Link to='/products' >
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare lg:group-hover:max-w-[50%]"
+                                                className="max-w-[100%] rare lg:group-hover:max-w-[60%]"
                                             />
                                         </div>
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
                                             <h2 className="text-center md:text-lg font-semibold mb-2 h-7 overflow-hidden">
                                                 {product.title}
                                             </h2>
-                                            <p className="text-center text-gray-700 mb-6">
+                                            <p className="text-center text-gray-700 ">
                                                 <span className="text-[#E38734] font-bold md:text-xl">
                                                     {product.price}
                                                 </span>
@@ -111,21 +111,21 @@ function Products() {
                     </div>
                     <div className="group ">
                         {productss.map((product, index) => (
-                            <div key={index} className="relative md:w-full  lg:h-[360px]   hover:shadow-md   border rounded-lg overflow-hidden">
+                            <div key={index} className="relative md:w-full  lg:h-[365px]   hover:shadow-md   border rounded-lg overflow-hidden">
                                 <div className=' '>
                                     <Link to='/doodle' onClick={toggleMenu}>
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare lg:group-hover:max-w-[50%] "
+                                                className="max-w-[100%] rare lg:group-hover:max-w-[60%] "
                                             />
                                         </div>
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
                                             <h2 className="text-center md:text-lg font-semibold mb-2">
                                                 {product.title}
                                             </h2>
-                                            <p className="text-center text-gray-700 mb-6">
+                                            <p className="text-center text-gray-700 ">
                                                 <span className="text-[#E38734] font-bold md:text-xl">
                                                     {product.price}
                                                 </span>
@@ -152,21 +152,21 @@ function Products() {
                     </div>
                     <div className="group ">
                         {product1.map((product, index) => (
-                            <div key={index} className="relative md:w-full  lg:h-[360px]   hover:shadow-md   border rounded-lg overflow-hidden">
+                            <div key={index} className="relative md:w-full  lg:h-[365px]   hover:shadow-md   border rounded-lg overflow-hidden">
                                 <div className=' '>
                                     <Link to='/selfiestick' onClick={toggleMenu}>
                                         <div className='relative w-[100%] flex justify-center items-center pt-[10px] z-10'>
                                             <img
                                                 src={product.imageSrc}
                                                 alt={product.title}
-                                                className="max-w-[100%] rare lg:group-hover:max-w-[50%] "
+                                                className="max-w-[100%] rare lg:group-hover:max-w-[60%] "
                                             />
                                         </div>
                                         <div className='relative p-[10px] flex justify-center items-center flex-col z-10 cursor-default'>
                                             <h2 className="text-center md:text-lg font-semibold mb-2">
                                                 {product.title}
                                             </h2>
-                                            <p className="text-center text-gray-700 mb-6">
+                                            <p className="text-center text-gray-700 ">
                                                 <span className="text-[#E38734] font-bold md:text-xl">
                                                     {product.price}
                                                 </span>

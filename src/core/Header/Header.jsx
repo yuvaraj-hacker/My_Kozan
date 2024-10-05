@@ -14,12 +14,6 @@ export default function Header() {
     setOpen(!isOpen);
   };
   const { cart } = useCartStore();
-  const handleSearchFocus = () => {
-    setSearchActiv(true);
-  };
-  const handleSearchBlur = () => {
-    setSearchActiv(false);
-  };
 
 
   const handleSearchClick = () => {
@@ -47,8 +41,7 @@ export default function Header() {
               <input
                 placeholder="Search"
                 className="w-full rounded-md px-2 py-1 border focus:outline-[#E38734]"
-                onFocus={handleSearchFocus}
-                onBlur={handleSearchBlur}
+               
               />
               <img
                 src="/assets/Images/Header/Search.png"
@@ -118,7 +111,7 @@ export default function Header() {
                 src="/assets/Images/Header/Search (1).png"
                 alt="search icon"
                 className="  w-7 h-7 cursor-pointer"
-                onClick={handleSearchClick} // Open search when clicked
+                onClick={handleSearchClick}
               />
             </div>
           </div>
@@ -179,23 +172,51 @@ export default function Header() {
           ></div>
         )
       }
+
+
+
+
       {isSearchActive && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center">
-          <div className="bg-white p-7 rounded-lg relative w-[80vw] max-w-lg">
+        <div className="fixed inset-0 z-50 bg-white">
+          <div className="flex items-center px-4 py-3 border-b">
             <button
-              className="absolute top-2 right-2 text-gray-600"
-              onClick={handleSearchClose} // Close search modal
+              onClick={handleSearchClose}
+              className="text-gray-700 hover:text-gray-900 mr-2"
             >
-              ✕
+              <img
+                src="/assets/Images/Header/Left.png"
+                alt="Back"
+                className="w-6 h-6"
+              />
             </button>
             <input
-              type="text"
-              className="w-full p-2 border rounded-lg focus:outline-none"
-              placeholder="Search..."
+              autoFocus
+              className="w-full bg-transparent outline-none text-lg"
+              placeholder="Search for Products"
             />
+          </div>
+
+          <div className="px-4 py-5">
+            <h3 className="text-sm text-gray-500 mb-2"></h3>
+            <div className="flex flex-wrap gap-2">
+        
+            </div>
           </div>
         </div>
       )}
+
+      
+      {isSearchActive && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-40"
+          onClick={handleSearchClose}
+        ></div>
+      )}
+
     </>
   );
 }
+
+
+
+

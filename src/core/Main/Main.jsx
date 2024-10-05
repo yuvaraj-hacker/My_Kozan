@@ -11,9 +11,7 @@ function Main() {
         <Outlet/>
       </main>
       <Footer/>
-      <div className='md:hidden block fixed bottom-0 bg-white p-2 z-50 w-full border rounded-sm'>
-        <Foot/>
-      </div>
+      
     </div>
   )
 }

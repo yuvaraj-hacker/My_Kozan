@@ -11,7 +11,7 @@ function Foot() {
     const { cart } = useCartStore();
     return (
         <>
-            <section className=' '>
+            <section className=''>
                 <div className='flex justify-around  items-center mt-2  w-full'>
                     <Link to='/' onClick={toggleMenu}>
                         <div className='flex flex-col justify-center items-center '>

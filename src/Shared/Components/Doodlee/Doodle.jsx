@@ -102,6 +102,7 @@ function Doodle() {
       <div className="grid lg:grid-cols-10 grid-cols-5 lg:gap-10 gap-4">
         <div className='col-span-1  flex flex-col gap-3 '>
           {productDetails.map((product, index) => (
+            
             <img
               key={index}
               className='w-full cursor-pointer hover:scale-105 duration-200 hover:border h-[65px] hover:border-black'
@@ -113,7 +114,7 @@ function Doodle() {
         </div>
         <div className='col-span-4   flex flex-col'>
           <div
-            className='relative overflow-hidden w-full  lg:h-[370px] md:h-[500px] h-[300px]  '
+            className='relative overflow-hidden w-full  lg:h-[370px] md:h-[500px] h-[300px]  cursor-zoom-in '
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{
