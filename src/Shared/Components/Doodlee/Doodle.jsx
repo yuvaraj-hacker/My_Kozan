@@ -102,7 +102,7 @@ function Doodle() {
       <div className="grid lg:grid-cols-10 grid-cols-5 lg:gap-10 gap-4">
         <div className='col-span-1  flex flex-col gap-3 '>
           {productDetails.map((product, index) => (
-            
+
             <img
               key={index}
               className='w-full cursor-pointer hover:scale-105 duration-200 hover:border h-[65px] hover:border-black'
@@ -133,7 +133,7 @@ function Doodle() {
           </div>
           <div className='flex justify-between px-4 mt-4'>
             <button
-              className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734]  '
+              className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734]'
               onClick={handleAddToCart}
             >
               <span className=''><img className='md:block hidden' src="/assets/Images/Header/Shopping Cart.png" alt="cart" /></span><span className=''>Add to Cart</span>

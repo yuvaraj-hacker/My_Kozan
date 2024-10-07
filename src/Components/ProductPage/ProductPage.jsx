@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-      const fetchProducts = async () => {
-          try {
-              const response = await axios.get('http://localhost:3000/products/products'); 
-              setProducts(response.data); 
-              setLoading(false);
-          } catch (error) {
-              console.error('Error fetching products:', error);
-              setLoading(false);
-          }
-      };
-      fetchProducts();
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/products/products');
+        setProducts(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setLoading(false);
+      }
+    };
+    fetchProducts();
   }, []);
   if (loading) {
-      return <div>Loading products...</div>;
+    return <div>Loading products...</div>;
   }
 
   // const products = [

@@ -11,10 +11,8 @@ const useAuth = create((set) => ({
   },
 
   logout: () => {
-    //const navigate = useNavigate();
     localStorage.removeItem(tokenname);
     set({ isLoggedIn: false, user: null });
-    //navigate('/login')
   },
 
   userdetails: () => {
@@ -28,3 +26,5 @@ const useAuth = create((set) => ({
 }));
 
 export default useAuth;
+
+

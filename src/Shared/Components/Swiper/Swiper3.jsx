@@ -27,20 +27,21 @@ function Swiper3() {
                     0: {
                         slidesPerView: 1,
                         centeredSlides: true,
-                        spaceBetween: 10,
+                        spaceBetween: 30,
                     },
                     600: {
                         slidesPerView: 1,
                         centeredSlides: true,
-                        spaceBetween: 10,
+                        spaceBetween: 30,
                     },
                     1024: {
                         slidesPerView: 3,
-                    
+
                         spaceBetween: 30,
                     },
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
+                className='px-5 '
             >
                 <SwiperSlide>
                     <Link to='/product' onClick={toggleMenu}>

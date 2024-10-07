@@ -26,3 +26,7 @@ const apiupdatepassword = async(data)=>{
    return res.data;
 }
 export { apisendotp, apiverifyotp, apisendotpforgotpassword, apiverifyotpforgotpassword, apiupdatepassword };
+
+
+
+ 

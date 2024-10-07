@@ -55,3 +55,15 @@ const deleteProduct = async (id) => {
 };
 
 export { createProduct , getAllProducts , searchProducts , getProductbyId , updateProduct , deleteProduct }
+
+
+
+
+
+
+
+
+
+
+
+

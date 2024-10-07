@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom';
 function Swiper1() {
     const toggleMenu = () => {
         if (!isOpen) {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         setOpen(!isOpen);
-      };
+    };
     return (
         <>
             <Swiper
@@ -24,11 +24,11 @@ function Swiper1() {
                     0: {
                         slidesPerView: 1,
                         centeredSlides: true,
-                        spaceBetween: 10,
+                        spaceBetween: 30,
                     },
                     600: {
                         slidesPerView: 1,
-                        spaceBetween: 10,
+                        spaceBetween: 30,
                     },
                     1024: {
                         slidesPerView: 3,
@@ -40,37 +40,42 @@ function Swiper1() {
                     disableOnInteraction: false,
                 }}
                 modules={[Pagination, Navigation, Autoplay]}
+                className='px-5'
             >
+
+
+
                 <SwiperSlide>
                     <Link to='/product' onClick={toggleMenu}>
                         <img className='cursor-pointer' src="/assets/Images/Products/product-1.png" alt="product1" />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to='/product'  onClick={toggleMenu}>
+                    <Link to='/product' onClick={toggleMenu}>
                         <img className='cursor-pointer' src="/assets/Images/Products/product2.png" alt="product1" />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to='/product'  onClick={toggleMenu}>
+                    <Link to='/product' onClick={toggleMenu}>
                         <img className='cursor-pointer' src="/assets/Images/Products/product3.png" alt="product1" />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to='/product'  onClick={toggleMenu}>
+                    <Link to='/product' onClick={toggleMenu}>
                         <img className='cursor-pointer' src="/assets/Images/Products/product-1.png" alt="product1" />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to='/product'  onClick={toggleMenu}>
+                    <Link to='/product' onClick={toggleMenu}>
                         <img className='cursor-pointer' src="/assets/Images/Products/product2.png" alt="product1" />
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Link to='/product'  onClick={toggleMenu}>
+                    <Link to='/product' onClick={toggleMenu}>
                         <img className='cursor-pointer' src="/assets/Images/Products/product3.png" alt="product1" />
                     </Link>
                 </SwiperSlide>
+
             </Swiper>
         </>
     )
