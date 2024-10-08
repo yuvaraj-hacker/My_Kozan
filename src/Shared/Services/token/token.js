@@ -35,3 +35,10 @@ const removetoken=()=>{
 }
 
 export default {gettoken,isLoggedIn,settoken,getuserdetails,removetoken};
+
+
+
+
+
+
+

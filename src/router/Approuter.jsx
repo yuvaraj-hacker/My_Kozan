@@ -14,6 +14,7 @@ import Forgot from "../Components/Forgot Password/Forgot.jsx";
 import AdminRoute from "../Admin/router/adminRoute.jsx";
 import AdminProduct from "../Admin/components/AdminProduct.jsx";
 import SearchResults from "../Shared/Components/SearchedComponent/SearchResults.jsx";
+import SideBar from "../Admin/core/sidebar/SideBar.jsx";
 
 
 export default function Approuter() {
@@ -27,9 +28,8 @@ export default function Approuter() {
       <Routes>
 
         <Route element={<Main />}>
-        
+
           <Route path="/" element={<Home />} />
-         
           <Route path="/productsdetail/:id" element={<ProductCard />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
@@ -40,8 +40,10 @@ export default function Approuter() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/doodle" element={<DoodleBoard />} />
           <Route path="/forgot" element={<Forgot />} />
-          <Route path="/pr" element={<AdminProduct />} />
+
         </Route>
+        <Route path="/pr" element={<AdminProduct />} />
+
         <Route path="/admin/*" element={<AdminRoute />} />
       </Routes>
     </BrowserRouter>

@@ -11,7 +11,6 @@ const AdminProduct = () => {
   const [visible, setVisible] = useState(false);
   const [productToEdit, setProductToEdit] = useState(null);
   const [products, setProducts] = useState([]);
-
   const [formData, setFormData] = useState({
     Images: [],
     Product_Name: "",
@@ -126,9 +125,11 @@ const AdminProduct = () => {
 
 
   return (
+
     <>
 
-      <div className="card">
+
+      <div >
         <TableView
           handleAdd={handleAdd}
           handleEdit={handleEdit}

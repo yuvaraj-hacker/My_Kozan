@@ -2,19 +2,19 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
-const TableView = ({ handleEdit, handleDelete , handleAdd , products}) => {
+const TableView = ({ handleEdit, handleDelete, handleAdd, products }) => {
 
- 
+
   return (
-    <div className="p-4">
-      
+    <div className="p-4 max-w-[100rem] mt-10">
+
       <div className="mb-4">
         <button onClick={handleAdd} className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600" >
           Add New Product
         </button>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white">
+        <table className=" bg-white" >
           <thead>
             <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
               <th className="py-3 px-6 text-left">Action</th>
@@ -37,41 +37,43 @@ const TableView = ({ handleEdit, handleDelete , handleAdd , products}) => {
             </tr>
           </thead>
           <tbody className="text-gray-600 text-sm font-light">
-          {products && products.length > 0 && products.map((item) => (
-              <tr key={item._id} className="border-b border-gray-200 hover:bg-gray-100">
-                <td className="py-3 px-6 text-left">
-                  <div className="flex gap-4 item-center">
-                    <div className="mr-2 cursor-pointer" onClick={() => handleEdit(item)}>
-                      <FaEdit className="text-xl text-blue-500" />
-                    </div>
-                    <div className="cursor-pointer" onClick={() => handleDelete(item._id)}>
-                      <MdDelete className="text-2xl text-red-500" />
-                    </div>
-                  </div>
-                </td>
-                <td className="py-3 px-6 text-left">
-                  {item.Images && item.Images.length > 0 && (
-                    <img src={item.Images[0]} alt={item.Product_Name} className="w-16 h-16 object-cover" />
-                  )}
-                </td>
-                <td className="py-3 px-6 text-left">{item.Product_Name}</td>
-                <td className="py-3 px-6 text-left">{item.Category}</td>
-                <td className="py-3 px-6 text-left">{item.Regular_Price}</td>
-                <td className="py-3 px-6 text-left">{item.Sale_Price}</td>
-                <td className="py-3 px-6 text-left">{item.Discount}</td>
-                <td className="py-3 px-6 text-left">{item.Avail_Stock}</td>
-                <td className="py-3 px-6 text-left">{item.Status}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Material}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Shape}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Place_of_Origin}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Design}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].MOQ}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Usage}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Function}</td>
-                <td className="py-3 px-6 text-left">{item.General[0].Brand_Name}</td>
-              </tr>
-            ))}
-          </tbody>
+  {products && products.length > 0 && products.map((item) => (
+    <tr key={item._id} className="border-b border-gray-200 hover:bg-gray-100">
+      <td className="py-3 px-6 text-left">
+        <div className="flex gap-4 item-center">
+          <div className="mr-2 cursor-pointer" onClick={() => handleEdit(item)}>
+            <FaEdit className="text-xl text-blue-500" />
+          </div>
+          <div className="cursor-pointer" onClick={() => handleDelete(item._id)}>
+            <MdDelete className="text-2xl text-red-500" />
+          </div>
+        </div>
+      </td>
+      <td className="py-3 px-6 text-left">
+        {item.Images && item.Images.length > 0 && (
+          <img src={item.Images[0]} alt={item.Product_Name} className="w-16 h-16 object-cover" />
+        )}
+      </td>
+      <td className="py-3 px-6 text-left">{item.Product_Name}</td>
+      <td className="py-3 px-6 text-left">{item.Category}</td>
+      <td className="py-3 px-6 text-left">{item.Regular_Price}</td>
+      <td className="py-3 px-6 text-left">{item.Sale_Price}</td>
+      <td className="py-3 px-6 text-left">{item.Discount}</td>
+      <td className="py-3 px-6 text-left">{item.Avail_Stock}</td>
+      <td className="py-3 px-6 text-left">{item.Status}</td>
+      {/* Add a safe check before accessing General[0] */}
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Material}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Shape}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Place_of_Origin}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Design}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.MOQ}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Usage}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Function}</td>
+      <td className="py-3 px-6 text-left">{item.General && item.General[0]?.Brand_Name}</td>
+    </tr>
+  ))}
+</tbody>
+
         </table>
       </div>
       {/* <AddEditForm
@@ -81,7 +83,7 @@ const TableView = ({ handleEdit, handleDelete , handleAdd , products}) => {
         setProductToEdit={setProductToEdit}
          onProductUpdated={fetchProducts} formData={formData} setFormData={setFormData}
       /> */}
-      <ConfirmDialog  className='bg-white p-5'/>
+      <ConfirmDialog className='bg-white p-5' />
     </div>
   );
 };

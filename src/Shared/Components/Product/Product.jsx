@@ -47,14 +47,14 @@ function Products() {
                 {products.map((product) => (
                     <div
                         key={product._id}
-                        className="relative md:w-full md:h-[360px] hover:shadow-md border rounded-lg overflow-hidden group"
+                        className="relative md:w-full lg:h-[360px] hover:shadow-md border rounded-lg overflow-hidden group"
                     >
                         <Link to={`/productsdetail/${product._id}`}>
                             <div className="relative w-full flex justify-center items-center pt-[10px] z-10">
                                 <img
                                     src={product.Images[0]}
                                     alt={product.Product_Name}
-                                    className="max-w-full rare md:group-hover:max-w-[60%]"
+                                    className="max-w-full rare lg:group-hover:max-w-[60%]"
                                 />
                             </div>
                             <div className="relative p-[5px] flex justify-center items-center flex-col z-10 cursor-default">
@@ -69,7 +69,7 @@ function Products() {
                                 </p>
                             </div>
                         </Link>
-                        <div className="flex justify-around items-center md:mb-0 mb-5">
+                        <div className="flex justify-around items-center lg:mb-0 mb-5">
                             <Link to="/order">
                                 <button className="bg-[#00712D] hover:scale-105 mt-4 md:text-base text-sm duration-200 text-white py-2 px-4 rounded-lg w-full transition">
                                     Buy Now

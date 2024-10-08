@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { IoEye , IoMdEyeOff } from 'react-icons/io';
 import toast from 'react-hot-toast';
 import { apilogin } from '../../Services/apiAuth/apiLogin';
-// import { useAuth } from '../authenticated/AuthProvider';
 import { IoEye } from 'react-icons/io5';
 import { IoMdEyeOff } from 'react-icons/io';
 import useAuth from '../../Services/Store/useAuth';
@@ -26,7 +24,14 @@ function Login() {
       if (response.status === 'Success') {
         login(response.token);
         toast.success('Login successful!');
-        navigate("/product");
+
+
+        const userRole = response.userRole;
+        if (userRole === 'admin') {
+          navigate("/admin");
+        } else {
+          navigate("/");
+        }
         window.location.reload();
       } else {
         toast.error('Invalid email or password');
@@ -78,7 +83,9 @@ function Login() {
             </div>
             <p className="lg:text-base text-md text-gray-400">
               By continuing, you agree to <span className='text-[#00712D]'>My Kozan LLC</span> terms of Use and
-              <span className='text-[#00712D]'> Privacy Policy</span>
+              <Link to='/privacy'>
+                <span className='text-[#00712D]'> Privacy Policy</span>
+              </Link>
             </p>
           </div>
           <div className='text-center mt-10'>

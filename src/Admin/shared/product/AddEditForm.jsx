@@ -161,7 +161,7 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
                 <option value="outofstock">Out of Stock</option>
               </select>
             </div>
-             {/* <div>
+             <div>
               <label>Material</label>
               <input
                 type="text"
@@ -240,7 +240,7 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
                 onChange={handleInputChange}
                 className="border rounded-md"
               />
-            </div>  */}
+            </div>  
           </div>
           <div className="mt-4 flex justify-end">
             <button

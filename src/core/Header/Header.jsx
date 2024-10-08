@@ -1,5 +1,5 @@
-import React, { useState, useEffect ,} from 'react';
-import { Link, useLocation,useNavigate  } from 'react-router-dom';
+import React, { useState, useEffect, } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import Hamburger from 'hamburger-react';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
@@ -35,9 +35,9 @@ export default function Header() {
   const handleSearchSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     if (searchQuery.trim()) {
-        navigate(`/search?query=${encodeURIComponent(searchQuery)}`); // Redirect to search results page
+      navigate(`/search?query=${encodeURIComponent(searchQuery)}`); // Redirect to search results page
     }
-};
+  };
 
   return (
     <>
@@ -96,7 +96,7 @@ export default function Header() {
         </div>
 
 
-        <div className='flex justify-between items-center md:hidden block px-3'>
+        <div className='flex justify-between items-center md:hidden    block px-3'>
           <div>
 
 
@@ -140,7 +140,7 @@ export default function Header() {
         >
           <div className="p-4">
             <div className="flex justify-between " >
-              <div className='2xl:hidden block '>
+              <div className='2xl:hidden   xl:block lg:block md:block hidden '>
                 <Hamburger toggled={isOpen} toggle={toggleMenu} />
               </div>
               <h2 className="text-lg font-bold text-[#E38734] ml-auto">Menu</h2>
