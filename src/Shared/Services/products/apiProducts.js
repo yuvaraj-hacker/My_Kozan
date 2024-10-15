@@ -9,6 +9,14 @@ const getAuthHeaders = () => ({
   });
 
 
+  const createOrder = async (orderData) => {
+    const res = await axios.post(`${apiurl()}/api/orders`, orderData, getAuthHeaders());
+    return res.data;
+};
+
+  
+
+
 const createProduct = async (data) => {
   const res = await axios.post(`${apiurl()}/products/products`, data, getAuthHeaders());
   return res.data;
@@ -54,7 +62,7 @@ const deleteProduct = async (id) => {
   return res.data;
 };
 
-export { createProduct , getAllProducts , searchProducts , getProductbyId , updateProduct , deleteProduct }
+export { createProduct , getAllProducts , searchProducts , getProductbyId , updateProduct , deleteProduct, createOrder  }
 
 
 

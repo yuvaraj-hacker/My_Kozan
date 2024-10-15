@@ -4,7 +4,7 @@ function Sidebar() {
     return (
         <>
             <div className="flex h-screen bg-gray-100">
-                <div className="w-64 bg-white shadow-md">
+                <div className="md:w-64 bg-white shadow-md">
                     <div className="h-16 flex items-center justify-center font-bold text-lg text-blue-500">
                         Admin Panel
                     </div>

@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function HeroSection() {
-   
-    const [isOpen, setOpen] = useState(false); 
+
+    const [isOpen, setOpen] = useState(false);
 
     const toggleMenu = () => {
         if (!isOpen) {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        setOpen(!isOpen); 
+        setOpen(!isOpen);
     };
 
     return (
         <>
-            <section className="mx-auto md:max-w-[70rem] w-full md:px-5 lg:my-10 md:my-2 ">
+            <section className="mx-auto md:max-w-[70rem] w-full md:px-5 lg:my-10 md:my-2 lg:mt-0 md:mt-32">
                 <div className="grid lg:grid-cols-2 grid-cols-1 py-5 text-white lg:gap-0 gap-2  md:px-0 px-5  md:rounded-xl bg-[#E38734] md:mt-0 ">
                     <div className="flex justify-center items-center">
                         <div className='md:block hidden '>

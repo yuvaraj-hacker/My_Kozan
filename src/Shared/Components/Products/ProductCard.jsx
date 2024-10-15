@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { getProductbyId } from '../../Services/products/apiProducts';
-
+import UseCart from "../../Services/Store/UseCart";
+import useAuth from "../../Services/Store/useAuth";
+import { apisavecart } from "../../Services/Cart/apiCart";
 
 
 function ProductCard() {
@@ -35,14 +37,35 @@ function ProductCard() {
     fetchProductDetails();
   }, [id]);
 
-  const handleAddToCart = () => {
-    if (productDetails && !cart.includes(productDetails)) {
-      setCart([...cart, productDetails]);
-      toast.success('Added To Cart Successfully');
-    } else {
-      toast.success('Already added to Cart');
-    }
-  };
+    const addToCart = UseCart(state => state.addToCart);
+    const cartItems = UseCart((state) => state.cartItems); 
+    const { isLoggedIn, userdetails } = useAuth(); 
+
+    const handleAddToCart = async (product) => {
+        if (!isLoggedIn) {
+            toast.error("Please log in to add items to your cart!");
+            return;
+        }
+
+        const userDetails = userdetails();
+        const cartItemsFromStore = cartItems || []; 
+
+        if (cartItemsFromStore.some((item) => item.product._id === product._id)) {
+            toast.error("Product is already in your cart!");
+            return;
+        }
+
+        try {
+            const cartData = { productId: product._id, Email: userDetails.Email, Quantity: 1 };
+            await apisavecart(cartData); 
+
+            addToCart(product); 
+            toast.success("Product added to cart successfully!");
+        } catch (error) {
+            toast.error("Failed to add product to cart.");
+            console.error("Error adding product to cart:", error);
+        }
+    };
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
@@ -103,14 +126,14 @@ function ProductCard() {
             <div className='flex justify-between px-4 mt-4'>
               <button
                 className='border py-2 lg:px-4 px-2 rounded-lg flex gap-1 text-white hover:scale-105 duration-200 bg-[#E38734]  '
-                onClick={handleAddToCart}
+                onClick={() => handleAddToCart(product)}
               >
                 <span className=''>
                   <img src='/assets/Images/Header/Shopping Cart.png' alt='cart' />
                 </span>
                 Add to Cart
               </button>
-              <Link to='/order'>
+              <Link to='/checkout'>
                 <button className='border py-2 px-3 rounded-lg hover:scale-105 duration-200 text-white bg-[#00712D]'>
                   Buy Now
                 </button>

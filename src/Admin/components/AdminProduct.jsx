@@ -54,7 +54,7 @@ const AdminProduct = () => {
       const generalField = name.split(".")[1];
       setFormData(prev => ({
         ...prev,
-        General: [{ ...prev.General[0], [generalField]: value }]
+        General: [{ ...prev?.General[0], [generalField]: value }]
       }));
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
@@ -84,7 +84,7 @@ const AdminProduct = () => {
   };
 
   const handleAdd = () => {
-    setFormData({});
+    setFormData({General:[]});
     setProductToEdit(null);
     setVisible(true);
   };

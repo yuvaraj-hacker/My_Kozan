@@ -8,9 +8,9 @@ function Cart() {
 
     if (cart.length === 0) {
         return (
-            <div className="text-center mt-4 h-screen"  >
+            <div className="text-center mt-32 h-screen "  >
                 <h1>Your cart is empty.</h1>
-                <Link to="/">
+                <Link to="/product">
                     <button className="bg-[#00712D] text-white py-2 px-4 rounded">
                         Continue Shopping
                     </button>
@@ -23,7 +23,7 @@ function Cart() {
     const totalPrice = cart.reduce((total, item) => total + item.Sale_Price * item.quantity, 0);
 
     return (
-        <section className="my-10 max-w-[68rem] mx-auto">
+        <section className="my-10 max-w-[40rem] mx-auto md:my-32 px-5 md:mt-32 mt-32">
             <h1 className="text-center text-2xl border bg-[#00712D] text-white p-2 rounded-lg">
                 Shopping Cart
             </h1>
@@ -51,12 +51,26 @@ function Cart() {
                     </div>
                 ))}
             </div>
-            <div className="text-center mt-4">
-                <h2>Total Items: {totalItems}</h2>
-                <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
-                <button onClick={clearCart} className="bg-gray-500 text-white py-2 px-4 rounded">
-                    Clear Cart
-                </button>
+            <div className="flex justify-between ">
+
+
+                <div className="text-center mt-4">
+                    <h2>Total Items: {totalItems}</h2>
+
+                    <button onClick={clearCart} className="bg-gray-500 text-white py-2 px-4 rounded">
+                        Clear Cart
+                    </button>
+                </div>
+                <div className="text-center mt-4">
+                    <h2>Total Items: {totalItems}</h2>
+                    <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
+                    <Link to='/checkout'>
+
+                        <button className=" bg-[#00712D]  text-white py-2 px-4 rounded">
+                            Checkout
+                        </button>
+                    </Link>
+                </div>
             </div>
             <Link to="/">
                 <button className="mt-6 bg-[#00712D] text-white py-2 px-4 rounded">Continue Shopping</button>

@@ -17,6 +17,10 @@ function Sign() {
     password: '',
     name: '',
     confirmPassword: '',
+    address: '',
+    city: '',
+    state: '',
+    country: '',
   });
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -41,6 +45,13 @@ function Sign() {
         Email: data.email,
         Password: data.password,
         First_Name: data.name,
+        Address: data.address,
+        Country: data.country,
+        State: data.state,
+        City: data.city,
+        Zipcode: data.zipcode,
+
+
       });
 
       if (response.status === 'OTP Sent') {
@@ -85,7 +96,7 @@ function Sign() {
 
   return (
     <section className='md:mt-0 mt-36 my-20 px-2 flex justify-center items-center'>
-      <div className='lg:max-w-[30rem] mx-auto max-h-[40rem] border'>
+      <div className='lg:max-w-[30rem] mx-auto  border'>
         <div className='flex justify-center items-center gap-2 bg-[#00712D]'>
           <h1 className='text-white lg:text-xl text-lg text-center py-4 font-bold'>SignUp</h1>
         </div>
@@ -97,7 +108,7 @@ function Sign() {
                 <input
                   type='text'
                   required
-                  className='border-b-2 w-full border-gray-200 outline-none'
+                  className='border-b-2 focus:border-b-orange-300 w-full border-gray-200 outline-none'
                   name='name'
                   value={data.name}
                   onChange={handleOnChange}
@@ -115,6 +126,70 @@ function Sign() {
                 />
               </div>
               <div>
+                <p className='lg:text-lg text-md text-gray-400'>Country</p>
+                <input
+                  type='text'
+                  required
+                  className='border-b-2 w-full border-gray-200 outline-none'
+                  name='country'
+                  value={data.country}
+
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div>
+                <p className='lg:text-lg text-md text-gray-400'>State</p>
+                <input
+                  type='text'
+                  required
+                  className='border-b-2 w-full border-gray-200 outline-none'
+                  name='state'
+                  value={data.state}
+
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div>
+                <p className='lg:text-lg text-md text-gray-400'>Address</p>
+                <textarea
+                  type='text'
+                  required
+                  className='border-b-2 w-full border-gray-200 outline-none'
+                  name='address'
+                  value={data.address}
+                  rows={6}
+                  onChange={handleOnChange}
+                />
+              </div>
+
+
+              <div>
+                <p className='lg:text-lg text-md text-gray-400'>city</p>
+                <input
+                  type='text'
+                  required
+                  className='border-b-2 w-full border-gray-200 outline-none'
+                  name='city'
+                  value={data.city}
+
+                  onChange={handleOnChange}
+                />
+              </div>
+              <div>
+                <p className='lg:text-lg text-md text-gray-400'>ZipCode</p>
+                <input
+                  type='text'
+                  required
+                  className='border-b-2 w-full border-gray-200 outline-none'
+                  name='zipcode'
+                  value={data.zipcode}
+
+                  onChange={handleOnChange}
+                />
+              </div>
+
+
+              <div>
                 <p className='lg:text-lg text-md text-gray-400'>Password</p>
                 <div className='flex'>
                   <input
@@ -126,7 +201,7 @@ function Sign() {
                     onChange={handleOnChange}
                   />
                   <div className='cursor-pointer' onClick={() => setShowPassword((preve) => !preve)}>
-                    <span className='text-xl'>{showPassword ? <IoEye /> : <IoMdEyeOff />}</span>
+                    <span className='text-xl'>{showPassword ? <IoMdEyeOff /> : <IoEye />} </span>
                   </div>
                 </div>
               </div>
@@ -142,7 +217,7 @@ function Sign() {
                     onChange={handleOnChange}
                   />
                   <div className='cursor-pointer' onClick={() => setPass((preve) => !preve)}>
-                    <span className='text-xl'>{showPass ? <IoEye /> : <IoMdEyeOff />}</span>
+                    <span className='text-xl'>{showPass ? <IoMdEyeOff /> : <IoEye />} </span>
                   </div>
                 </div>
               </div>
@@ -156,7 +231,7 @@ function Sign() {
                   className='p-3 w-full bg-[#E38734] hover:scale-105 duration-200 lg:text-xl text-lg text-white rounded-lg'
                   onClick={handleSubmit}
                 >
-                  Send OTP
+                  Submit
                 </button>
               </div>
             </div>

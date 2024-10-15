@@ -1,20 +1,47 @@
-// components/Products.js
+
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Product/Product.css";
 import toast from "react-hot-toast";
 import { getAllProducts } from "../../Services/products/apiProducts";
 import UseCart from "../../Services/Store/UseCart";
+import useAuth from "../../Services/Store/useAuth";
+import { apisavecart } from "../../Services/Cart/apiCart";
+
 
 function Products() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const addToCart = UseCart(state => state.addToCart);
+    const cartItems = UseCart((state) => state.cartItems); 
+    const { isLoggedIn, userdetails } = useAuth(); 
 
-    const handleAddToCart = (product) => {
-        addToCart(product);
-        toast.success("Product added to cart!");
+    const handleAddToCart = async (product) => {
+        if (!isLoggedIn) {
+            toast.error("Please log in to add items to your cart!");
+            return;
+        }
+
+        const userDetails = userdetails();
+        const cartItemsFromStore = cartItems || []; 
+
+        if (cartItemsFromStore.some((item) => item.product._id === product._id)) {
+            toast.error("Product is already in your cart!");
+            return;
+        }
+
+        try {
+            const cartData = { productId: product._id, Email: userDetails.Email, Quantity: 1 };
+            await apisavecart(cartData); 
+
+            addToCart(product); 
+            toast.success("Product added to cart successfully!");
+        } catch (error) {
+            toast.error("Failed to add product to cart.");
+            console.error("Error adding product to cart:", error);
+        }
     };
+
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -31,7 +58,7 @@ function Products() {
     }, []);
 
     if (loading) {
-        return <div className="text-center">Loading products...</div>;
+        return <div className="text-center">Loading products...</div>; 
     }
 
     if (products.length === 0) {
@@ -70,8 +97,8 @@ function Products() {
                             </div>
                         </Link>
                         <div className="flex justify-around items-center lg:mb-0 mb-5">
-                            <Link to="/order">
-                                <button className="bg-[#00712D] hover:scale-105 mt-4 md:text-base text-sm duration-200 text-white py-2 px-4 rounded-lg w-full transition">
+                            <Link to="/checkout" state={{ product }}>
+                                <button className="bg-[#00712D] hover:scale-105 mt-4 md:text-base text-sm duration-200 text-white py-2 px-4 rounded-lg w-full transition"    >
                                     Buy Now
                                 </button>
                             </Link>

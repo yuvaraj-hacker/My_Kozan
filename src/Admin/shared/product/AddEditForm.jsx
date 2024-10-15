@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Dialog } from "primereact/dialog";
+import { Editor } from "primereact/editor";
 import toast from 'react-hot-toast';
 
+const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, formData, setFormData, handleSubmit, handleInputChange }) => {
 
-const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, formData, setFormData ,handleSubmit, handleInputChange }) => {
-
+  const [text, setText] = useState('');
   const [imagePreview, setImagePreview] = useState(null);
   const [error, setError] = useState(null);
- 
+
 
   useEffect(() => {
     if (productToEdit) {
@@ -16,7 +17,7 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
     }
   }, [productToEdit, setFormData]);
 
- const handleImageChange = (e) => {
+  const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       if (file.size > 5 * 1024 * 1024) {
@@ -48,7 +49,7 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
 
   return (
     <>
-      
+
       <Dialog
         header={productToEdit ? "Edit Product" : "Add New Product"}
         visible={visible}
@@ -61,7 +62,7 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
       >
         <form onSubmit={handleSubmit} className="p-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 *:mb-2 *:*:outline-0 *:*:w-full *:*:p-1 *:text-black/60">
-          
+
             <div>
               {error && <p className="text-red-500 mt-2">{error}</p>}
               {imagePreview ? (
@@ -88,7 +89,7 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
               <input type="file" accept="image/*" className="mt-28" onChange={handleImageChange} />
             </div>
 
-           
+
             <div>
               <label>Product Name</label>
               <input
@@ -161,7 +162,9 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
                 <option value="outofstock">Out of Stock</option>
               </select>
             </div>
-             <div>
+
+
+            {/* <div>
               <label>Material</label>
               <input
                 type="text"
@@ -240,7 +243,12 @@ const AddEditForm = ({ visible, setVisible, productToEdit, setProductToEdit, for
                 onChange={handleInputChange}
                 className="border rounded-md"
               />
-            </div>  
+            </div>  */}
+
+          </div>
+          <div >
+            <p className="md:text-xl text-base mt-5 text-bold mb-3">Specifications</p>
+            <Editor value={general.Brand_Name} onTextChange={(e) => setText(e.htmlValue)} style={{ height: '320px' }} />
           </div>
           <div className="mt-4 flex justify-end">
             <button

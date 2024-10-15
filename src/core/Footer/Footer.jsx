@@ -75,12 +75,12 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <div className='bg-[#FFF69F] text-center py-5 font-semibold  gap-1  flex flex-wrap justify-center md:px-0 px-5'> 
+      <div className='bg-[#FFF69F] text-center py-5 font-semibold  gap-1  flex flex-wrap justify-center md:px-0 px-5'>
         <div className='flex gap-1'>
           © 2024 by MyKozan LLC <span className='md:block hidden'> | </span>
         </div>
         <div>
-          Developed by <span className='text-[#C50707]'><a href='http://arrowthought.com/' target='_blank' rel='noopener noreferrer'>Arrow Thought</a></span>
+          Developed by <span className='text-[#C50707] hover:underline' ><a href='http://arrowthought.com/' target='_blank' rel='noopener noreferrer'>Arrow Thought</a></span>
         </div>
       </div>
     </>

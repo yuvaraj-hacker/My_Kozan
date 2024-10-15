@@ -48,7 +48,7 @@ const ProductPage = () => {
                       <h2 className='text-[#E38734] text-3xl font-bold'>${item.Sale_Price}</h2>
                       <p className="opacity-50 text-lg">(Min. 50 Pcs)</p>
                     </div>
-                    <div>
+                    <div >
                       <button className="p-2 px-4 text-white bg-[#00712D] rounded-lg text-center mx-auto font-semibold">Buy now</button>
                     </div>
                   </div>

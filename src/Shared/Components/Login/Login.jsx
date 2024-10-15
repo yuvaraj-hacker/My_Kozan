@@ -24,15 +24,14 @@ function Login() {
       if (response.status === 'Success') {
         login(response.token);
         toast.success('Login successful!');
-
-
-        const userRole = response.userRole;
-        if (userRole === 'admin') {
+        const role = response.role;
+        if (role === 'admin') {
           navigate("/admin");
-        } else {
+        } 
+        else if (role === 'customer'){
           navigate("/");
         }
-        window.location.reload();
+       
       } else {
         toast.error('Invalid email or password');
       }
@@ -73,7 +72,7 @@ function Login() {
                 />
                 <div className='cursor-pointer' onClick={() => setShowPassword((prev) => !prev)}>
                   <span className='text-xl'>
-                    {showPassword ? <IoEye /> : <IoMdEyeOff />}
+                    {showPassword ? <IoMdEyeOff /> : <IoEye />}
                   </span>
                 </div>
               </div>
@@ -84,7 +83,7 @@ function Login() {
             <p className="lg:text-base text-md text-gray-400">
               By continuing, you agree to <span className='text-[#00712D]'>My Kozan LLC</span> terms of Use and
               <Link to='/privacy'>
-                <span className='text-[#00712D]'> Privacy Policy</span>
+                <span className='text-[#00712D] hover:underline'> Privacy Policy</span>
               </Link>
             </p>
           </div>

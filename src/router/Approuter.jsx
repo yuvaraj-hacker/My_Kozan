@@ -15,6 +15,12 @@ import AdminRoute from "../Admin/router/adminRoute.jsx";
 import AdminProduct from "../Admin/components/AdminProduct.jsx";
 import SearchResults from "../Shared/Components/SearchedComponent/SearchResults.jsx";
 import SideBar from "../Admin/core/sidebar/SideBar.jsx";
+import ProtectedRoute from "../Shared/Components/ProtectedRoute/ProtectedRoute.jsx";
+import OrderDetails from "../Shared/Components/OrderConfirmation/OrderDetails .jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
+import Checkout from "../Shared/Components/Checkout/Checkout.jsx";
+import CheckOut from "../Admin/components/Checkoutpage/CheckOut.jsx";
+import Myorders from "../Components/Your Orders/Myorders.jsx";
 
 
 export default function Approuter() {
@@ -25,6 +31,7 @@ export default function Approuter() {
   ];
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
 
         <Route element={<Main />}>
@@ -40,9 +47,12 @@ export default function Approuter() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/doodle" element={<DoodleBoard />} />
           <Route path="/forgot" element={<Forgot />} />
+          <Route path="/details" element={<OrderDetails />} />
+          <Route path="/checkout" element={<CheckOut/>} />
+          <Route path="/yourorder" element={<Myorders/>} />
 
         </Route>
-        <Route path="/pr" element={<AdminProduct />} />
+
 
         <Route path="/admin/*" element={<AdminRoute />} />
       </Routes>

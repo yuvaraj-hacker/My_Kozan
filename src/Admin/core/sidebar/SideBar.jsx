@@ -13,12 +13,12 @@ const SideBar = () => {
 
   return (
     <>
-      <section className='w-80 h-screen p-5 '>
+      <section className='md:w-80 h-screen md:p-5 '>
         <div className='bg-slate-200 h-full w-full rounded-2xl'>
           <Link to='/'>
 
             <div>
-              <img className='mx-auto pt-5' src="/assets/Images/Header/My_Kozan1.png" alt="Logo" />
+              <img className='mx-auto pt-5 md:block hidden ' src="/assets/Images/Header/My_Kozan1.png" alt="Logo" />
             </div>
           </Link>
           <div className='mt-14'>
@@ -26,7 +26,7 @@ const SideBar = () => {
               to='/admin/dashboard'
               className={`inline-flex gap-4 items-center ${isActive('/admin/dashboard') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer'} p-2 pl-5 hover:bg-[#E38734] hover:text-white w-[calc(100%-16px)] m-2 duration-200`}
               onClick={toggleMenu}>
-              <FaTachometerAlt /> Dashboard
+              <FaTachometerAlt /> <span className='md:block hidden'>Dashboard</span> 
             </Link>
           </div>
           <div>
@@ -34,7 +34,7 @@ const SideBar = () => {
               to='/admin/product'
               className={`inline-flex gap-4 items-center ${isActive('/admin/product') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer'}  p-2 pl-5 hover:bg-[#E38734] hover:text-white w-[calc(100%-16px)] mx-2 mb-1 duration-200`}
               onClick={toggleMenu}>
-              <FaBoxOpen /> Products
+              <FaBoxOpen /> <span className='md:block hidden'>Products</span> 
             </Link>
           </div>
           <div>
@@ -42,7 +42,7 @@ const SideBar = () => {
               to='/admin/orders'
               className={`inline-flex gap-4 items-center ${isActive('/admin/orders') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer'}  p-2 pl-5 hover:bg-[#E38734] hover:text-white w-[calc(100%-16px)] mx-2 mb-1 duration-200`}
               onClick={toggleMenu}>
-              <FaReceipt /> Orders
+              <FaReceipt /> <span className='md:block hidden'>Orders</span> 
             </Link>
           </div>
           <div>
@@ -50,7 +50,7 @@ const SideBar = () => {
               to='/admin/users'
               className={`inline-flex gap-4 items-center ${isActive('/admin/users') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer'}  p-2 pl-5 hover:bg-[#E38734] hover:text-white w-[calc(100%-16px)] mx-2 mb-1 duration-200`}
               onClick={toggleMenu}>
-              <FaUserAlt /> Users
+              <FaUserAlt /> <span className='md:block hidden'>Users</span> 
             </Link>
           </div>
           <div>
@@ -58,7 +58,7 @@ const SideBar = () => {
               to='/'
               className={`inline-flex gap-4 items-center ${isActive('/') ? 'text-[#E38734]' : 'hover:text-[#E38734] cursor-pointer'}  p-2 pl-5 hover:bg-[#E38734] hover:text-white w-[calc(100%-16px)] mx-2 mb-1 duration-200`}
               onClick={toggleMenu}>
-              <FaHome /> Home Page
+              <FaHome /> <span className='md:block hidden'>Home Page</span> 
             </Link>
           </div>
         </div>
